@@ -1,0 +1,50 @@
+/* 예시: src/styles/fonts.css */
+
+/* 폰트 불러오기 */
+
+@font-face {
+  font-family: "LGSmartBoldItalic"; /* 원하는 폰트 패밀리 이름 지정 */
+  src: local("LGSmartBoldItalic"),
+    url("../../public/fonts/LGSmartBoldItalic.ttf") format("truetype"); /* ttf 파일의 상대 경로 지정 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LGSmart_H"; /* 원하는 폰트 패밀리 이름 지정 */
+  src: local("LGSmart_H"),
+    url("../../public/fonts/LGSmHaR.ttf") format("truetype"); /* ttf 파일의 상대 경로 지정 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LGSmart_H-semibold"; /* 원하는 폰트 패밀리 이름 지정 */
+  src: local("LGSmart_H-semibold"),
+    url("../../public/fonts/LGSmHaSB.ttf") format("truetype"); /* ttf 파일의 상대 경로 지정 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LGSmart_H-Bold"; /* 원하는 폰트 패밀리 이름 지정 */
+  src: local("LGSmart_H-Bold"),
+    url("../../public/fonts/LGSmartBold.ttf") format("truetype"); /* ttf 파일의 상대 경로 지정 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LGSmart"; /* 원하는 폰트 패밀리 이름 지정 */
+  src: local("LGSmart"),
+    url("../../public/fonts/LGSmartRegular.ttf") format("truetype"); /* ttf 파일의 상대 경로 지정 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 나머지 스타일 지정 */
+body {
+  font-family: "LGSmartRegular", sans-serif; /* 글꼴 적용 */
+  background-color: #f5f5f5;
+  /* 나머지 스타일 속성 추가 */
+}

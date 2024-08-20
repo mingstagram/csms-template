@@ -1,0 +1,1458 @@
+.Rectangle-331 {
+  width: 40px;
+  height: 25px;
+  margin: 0 0 0 -5px;
+  padding: 0px 8px;
+  border-radius: 4px;
+  background-color: #edeef2;
+  /* border: 0px: */
+}
+
+.Rectangle-332 {
+  width: 40px;
+  height: 25px;
+  margin: 0 0 0 8px;
+  padding: 0px 8px;
+  border-radius: 4px;
+  background-color: #edeef2;
+}
+
+.pageFooter {
+  width: 90px;
+  height: 14px;
+  flex-grow: 0;
+  margin: 8px 14px 8px 0;
+  font-family: LGSmart_H;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.13px;
+  text-align: center;
+  color: #222;
+}
+
+.Rectangle-14 {
+  width: 180px;
+  height: 40px;
+  margin: 20px 0 0 176px;
+  padding: 13px 56px 9px;
+  border-radius: 4px;
+  background-color: #439099;
+}
+
+.Label-1 {
+  width: 197px;
+  height: 20px;
+  flex-grow: 0;
+  margin: 0 65px 14px 0;
+  font-family: LGSmart_H;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  text-align: left;
+  color: #222;
+}
+
+.Label-2 {
+  width: 181px;
+  height: 20px;
+  flex-grow: 0;
+  margin: 0 71px 10px 0;
+  font-family: LGSmart_H;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  text-align: left;
+  color: #222;
+}
+
+.Rectangle-324 {
+  width: 608px;
+  height: 438px;
+  flex-grow: 0;
+  margin: 0px 0 0;
+  padding: 60px 105px 75px 97px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.-Dash-Board- {
+  width: 415px;
+  height: 27px;
+  flex-grow: 0;
+  font-family: LGSmart_H;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: -0.21px;
+  text-align: center;
+  color: #474747;
+}
+
+.Login_Title1 {
+  width: 415px;
+  height: 27px;
+  flex-grow: 0;
+  margin: 0 0 33px;
+  font-family: LGSmart_H;
+  font-size: 19px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: -0.21px;
+  text-align: center;
+  color: #474747;
+}
+
+.Rectangle-326 {
+  /* width: 212px; */
+  height: 50px;
+  flex-grow: 0;
+  margin: 5px 5px 10px 6px;
+  border-radius: 4px;
+  border: solid 1px #dcdcdc;
+  background-color: #fff;
+}
+
+.Rectangle-326::placeholder {
+  font-size: 16px;
+  font-family: LGSmart_H; /* Placeholder text style */
+}
+
+.Rectangle-327 {
+  width: 404px;
+  height: 50px;
+  flex-grow: 0;
+  margin: 5px 5px 26px 6px;
+  border-radius: 4px;
+  border: solid 1px #dcdcdc;
+  background-color: #fff;
+}
+
+.Rectangle-327::placeholder {
+  font-size: 16px;
+  font-family: LGSmart_H; /* Placeholder text style */
+}
+
+.Component-99 {
+  width: 404px;
+  height: 50px;
+  flex-grow: 0;
+  margin: 10px 5px 16px 6px;
+  padding: 15px 170px 14px 179px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d00042;
+}
+
+.Login_Label1 {
+  width: 45px;
+  height: 21px;
+  font-family: LGSmart_H;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.LG-Dash-Board {
+  width: 422px;
+  height: 30px;
+  flex-grow: 0;
+  margin: 0 80px 45px;
+  font-family: LGSmart_H;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6b6b6b;
+}
+
+.LG-Dash-Board .text-style-1 {
+  font-family: LGSmart_H;
+  font-weight: bold;
+}
+.LG-Dash-Board .text-style-2 {
+  font-family: LGSmart_H;
+}
+
+.Check_Normal {
+  width: 18px;
+  height: 18px;
+  margin: 0px 5px 16px 6px;
+  border-radius: 2px;
+  border: solid 1px #838383;
+  background-color: #fff;
+}
+
+.Label_Login {
+  width: 110px;
+  height: 21px;
+  flex-grow: 0;
+  margin: 0 0px 0 0;
+  font-family: LGSmart_H;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #555;
+}
+
+.Login_Label2 {
+  width: 77px;
+  height: 21px;
+  flex-grow: 0;
+  margin: 0 9.5px 0 0;
+  font-family: LGSmart;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #555;
+}
+
+.Login_Label3 {
+  width: 92px;
+  height: 21px;
+  flex-grow: 0;
+  margin: 0 127px 0 8.5px;
+  font-family: LGSmart_H;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #555;
+}
+
+.Login_Label4 {
+  width: 59px;
+  height: 21px;
+  flex-grow: 0;
+  margin: 0 0 0 127px;
+  font-family: LGSmart_H;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #444;
+}
+
+.Label_PWChange {
+  width: 125px;
+  height: 21px;
+  flex-grow: 0;
+  margin: 0 34px 0 35px;
+  font-family: LGSmart_H;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #555;
+}
+
+.Label_Join {
+  width: 60px;
+  height: 21px;
+  flex-grow: 0;
+  margin: 0 0 0 0px;
+  font-family: LGSmart_H;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #444;
+}
+
+.Vector-12 {
+  width: 1px;
+  height: 14px;
+  flex-grow: 0;
+  margin: 3px 0px 3px 0px;
+  background-color: #cecece;
+}
+
+.Password_Title {
+  width: 170px;
+  height: 26px;
+  flex-grow: 0;
+  margin: 0 106px 13px 125px;
+  font-family: LGSmart_H;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #222;
+}
+
+.Password_Box {
+  width: 608px;
+  height: 720px;
+  flex-grow: 0;
+  margin: 45px 0 0;
+  padding: 65px 105px 75px 97px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.Password_Label1 {
+  width: 38px;
+  height: 18px;
+  margin: 50px 322px 6px 0;
+  font-family: LGSmart_H;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #444;
+}
+
+.Password_Label2 {
+  width: 70px;
+  height: 18px;
+  margin: 0 280px 6px 3px;
+  font-family: LGSmart_H;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #444;
+}
+
+.Password_Label3 {
+  width: 92px;
+  height: 18px;
+  margin: 0 250px 6px 3px;
+  font-family: LGSmart_H;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #444;
+}
+
+.Password_Label4 {
+  width: 259px;
+  height: 13px;
+  margin: 2px 94px 2px 2px;
+  font-family: LGSmart_H;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: -0.1px;
+  text-align: left;
+  color: #888;
+}
+
+.Password_Frame1 {
+  width: 374px;
+  height: 65px;
+  flex-grow: 0;
+  padding: 6px 5px 5px 0;
+}
+
+.Password_Frame2 {
+  width: 374px;
+  height: 75px;
+  flex-grow: 0;
+  padding: 6px 5px 5px 0;
+}
+
+.Password_Frame3 {
+  width: 374px;
+  height: 80px;
+  flex-grow: 0;
+  padding: 6px 0 5px;
+}
+
+.Rectangle-Pw1 {
+  width: 404px;
+  height: 32px;
+  flex-grow: 0;
+  margin: 5px 5px 0px 6px;
+  border-radius: 4px;
+  border: solid 1px #dcdcdc;
+  background-color: #fff;
+}
+
+.Rectangle-Pw2 {
+  width: 404px;
+  height: 32px;
+  flex-grow: 0;
+  margin: 5px 5px 0px 6px;
+  border-radius: 4px;
+  border: solid 1px #dcdcdc;
+  background-color: #fff;
+}
+
+.Pw_Button1 {
+  width: 404px;
+  height: 35px;
+  flex-grow: 0;
+  margin: 40px 6px 14px 3px;
+  padding: 5px 128px 8px 126px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d00042;
+}
+
+.Pw_Button2 {
+  width: 404px;
+  height: 36px;
+  flex-grow: 0;
+  margin: 14px 6px 0 3px;
+  padding: 5px 156px 9px;
+  border: none;
+  border-radius: 4px;
+  background-color: #edeef2;
+}
+
+.Pw_Label11 {
+  width: 106px;
+  height: 18px;
+  font-family: LGSmart_H;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.Pw_Label12 {
+  width: 48px;
+  height: 14px;
+  font-family: LGSmart_H;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.12px;
+  text-align: center;
+  color: #222;
+}
+
+.Pw_Title2 {
+  width: 440px;
+  height: 60px;
+  flex-grow: 0;
+  font-family: LGSmart_H;
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: -0.21px;
+  text-align: center;
+  color: #474747;
+}
+
+.Header_Label1 {
+  width: 45px;
+  height: 17px;
+  font-family: LGSmart_H;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: center;
+  color: #444;
+}
+
+.Header_Label1:hover {
+  color: #227d88; /* Change text color on hover */
+  font-weight: bold;
+}
+.LG-Dash-Board1 {
+  width: 324px;
+  height: 23px;
+  margin: 19px 0px 17px 0px;
+  font-family: LGSmart_H;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6b6b6b;
+}
+
+.LG-Dash-Board1:hover {
+  cursor: pointer;
+}
+
+.LG-Dash-Board1 .text-style-11 {
+  font-family: LGSmart_H;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.LG-Dash-Board1 .text-style-21 {
+  font-family: LGSmart_H;
+  font-size: 16px;
+}
+
+.Detail_Component1 {
+  width: 98%;
+  height: 88vh;
+  margin: 15px 20px 0;
+  padding: 25px 40px 22px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.Detail_Table1 {
+  width: 99%;
+  height: 50px;
+  margin: 0px 0 0;
+  padding: 0 0 4px;
+}
+
+.Matrix_List_Title1 {
+  font-family: LGSmart_H;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #222;
+}
+
+.Check_Normal1 {
+  width: 17px;
+  height: 17px;
+  margin: 7px 0px 0px 0px;
+  border-radius: 2px;
+  border: solid 1px #838383;
+  background-color: #fff;
+}
+
+.Dashboard_Component {
+  width: 1120px;
+  height: 88vh;
+  flex-grow: 0;
+  padding: 30px 40px 21px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.LeftHeader_Component {
+  width: 100px;
+  height: 93.2vh;
+  flex-grow: 0;
+  padding: 0px 0px 0px 0px;
+  background-color: #fff;
+}
+
+.menu-item {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ddd; /* 각 메뉴 사이에 구분선을 추가 */
+  cursor: pointer;
+  font-size: 12px;
+  font-family: LGSmart_H;
+}
+
+.menu-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 8px; /* 텍스트와 아이콘 사이의 간격 */
+}
+
+.menu-item:hover {
+  background-color: #fff0f0cc;
+  border-left: #e23465 solid 2px;
+}
+
+.submenu {
+  background-color: #fff0f0cc; /* 하위 메뉴 배경색은 hover 시의 배경색과 동일 */
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+  font-size: 12px;
+  font-family: LGSmart_H;
+}
+
+.submenu-item {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 텍스트를 수평 가운데 정렬 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+  cursor: pointer;
+}
+
+.submenu-item:hover {
+  background-color: #f6e2e2;
+}
+
+.Column_component1 {
+  width: 360px;
+  height: 43vh;
+  flex-grow: 0;
+  margin-bottom: 16.5px;
+  padding: 34px 32px 26px 30px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.Area_component1 {
+  width: 360px;
+  height: 43vh;
+  flex-grow: 0;
+  padding: 25px 28px 10px 30px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.Donut_component1 {
+  width: 315px;
+  height: 20.5vh;
+  margin-bottom: 20px;
+  padding: 20px 20px 16px 14px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.Matrix_Detail_Component1 {
+  width: 98%;
+  height: 88vh;
+  margin: 15px 20px 0;
+  padding: 25px 40px 22px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.Write_Component {
+  width: 1790px;
+  height: 92vh;
+  margin: 0px 0px 0;
+  padding: 50px 523px 77px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.Detail_Frame1 {
+  width: 474px;
+  height: 851px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+  margin: 20px 101px 8px 4px;
+  padding: 0;
+}
+
+.Detail_Frame2 {
+  width: 1px;
+  height: 859px;
+  margin: 20px 66px 0 101px;
+  transform: rotate(-270deg);
+  background-color: #eaeaea;
+}
+
+.Detail_Icon1 {
+  width: 3px;
+  height: 16px;
+  flex-grow: 0;
+  margin: 0 6px 8px 0;
+  background-color: #d00042;
+}
+
+.Ellipse_1 {
+  width: 3px;
+  height: 3px;
+  margin: 6px 3px 7px 0;
+  background-color: #888;
+}
+
+.Ellipse_2 {
+  width: 3px;
+  height: 16px;
+  margin: 3px 5px 7px 0;
+  background-color: #d00042;
+}
+
+.Ellipse_3 {
+  width: 3px;
+  height: 3px;
+  margin: 6px 3px 7px 0;
+  background-color: #d00042;
+}
+
+.Detail_Font1 {
+  font-family: LGSmart_H;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  color: #222;
+}
+
+.Detail_Font2 {
+  font-family: LGSmart_H;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  color: #666;
+}
+
+.Detail_Font3 {
+  font-family: LGSmart_H;
+  font-size: 12px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  color: #222;
+}
+
+.Risk_SelectBox1 {
+  width: 200px;
+  height: 30px;
+  flex-grow: 0;
+}
+
+.Risk_InputBox0 {
+  width: 150px;
+  height: 30px;
+  flex-grow: 0;
+}
+
+.Risk_InputBox1 {
+  width: 300px;
+  height: 30px;
+  flex-grow: 0;
+}
+
+.Risk_InputBox2 {
+  width: 70px;
+  height: 32px;
+  border-radius: 4px;
+  border: solid 1px #d9d9d9;
+  background-color: #fff;
+}
+
+.Risk_Label1 {
+  width: 8px;
+  height: 16px;
+  flex-grow: 0;
+  margin: 0px 6px 0px 0;
+  font-family: LGSmart_H;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #666;
+}
+
+.Risk_Label2 {
+  width: 8px;
+  height: 16px;
+  flex-grow: 0;
+  margin: 0px 0px 0px 6px;
+  font-family: LGSmart_H;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #666;
+}
+
+.Write_Validation1 {
+  width: 350px;
+  height: 35px;
+  flex-grow: 0;
+  margin: 0 0 0 20px;
+  padding: 6px 0 10px 0;
+  border-radius: 4px;
+  border: solid 1px #f86191;
+  background-color: #f8f1eb;
+  text-align: center;
+}
+
+.Validation_Label1 {
+  width: 198px;
+  height: 16px;
+  flex-grow: 0;
+  margin: 0 0 0 2px;
+  font-family: LGSmart_H;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ed174d;
+}
+
+.Modal_Component1 {
+  width: 460px;
+  height: 280px;
+  flex-grow: 0;
+  margin: 187px 6px 389px 8px;
+  padding: 50px 0 40px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.Setting_Box1 {
+  width: 450px;
+  height: 120px;
+  margin: 5px 0 0;
+  padding: 9px 7px 10px 15px;
+  border-radius: 5px;
+  border: solid 1px #dcdcdc;
+}
+
+.Setting_Box2 {
+  width: 150px;
+  height: 26px;
+  flex-grow: 0;
+  border-radius: 100px;
+  border: solid 1px #dcdcdc;
+  background-color: #edeef2;
+  padding: 7px 7px 10px 0px;
+}
+
+.Setting_Box3 {
+  width: 450px;
+  height: 135px;
+  margin: 5px 0 0;
+  padding: 9px 7px 10px 15px;
+  border-radius: 5px;
+  border: solid 1px #dcdcdc;
+}
+
+.Setting_Label1 {
+  flex-grow: 0;
+  font-family: LGSmart_H;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #222;
+  padding: 8px 5px 6px 6px;
+}
+
+.Setting_Label2 {
+  width: 150px;
+  height: 12px;
+  margin: 1px 0px 1px 15px;
+  font-family: LGSmart_H;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #222;
+}
+
+.Setting_Label3 {
+  width: 7.4px;
+  height: 7.4px;
+  flex-grow: 0;
+  background-color: #7c7c7c;
+}
+
+.Setting_Label4 {
+  width: 125px;
+  height: 15px;
+  margin: -2px 0px 1px 10px;
+  font-family: LGSmart_H;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #222;
+}
+
+.Detail_Font4 {
+  height: 16px;
+  margin: 1px 0 1px 374px;
+  font-family: LGSmart_H;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: right;
+  color: #888;
+}
+.Detail_Font4 .text-style-1 {
+  font-weight: 600;
+  color: #444;
+}
+
+.Setting_SelectBox1 {
+  width: 150px;
+  height: 30px;
+  flex-grow: 0;
+  margin: 1px 5px 1px 0px;
+}
+
+.image-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d9d9d9; /* 모달 배경색 */
+  width: 880px;
+  height: 550px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 이미지를 수직 중앙 정렬 */
+  justify-content: center; /* 이미지를 수평 중앙 정렬 */
+  border-radius: 15px;
+}
+
+.image-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.8); /* 반투명한 검정색 배경 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-modal-image {
+  width: 700px;
+  height: 400px;
+  object-fit: contain; /* 이미지를 유지하면서 적절하게 채우기 */
+  margin-bottom: 10px;
+}
+
+.image-modal-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: white;
+  background-color: #d9d9d9;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.image-modal-btn:hover {
+  background-color: #d9d9d9;
+}
+
+.image-modal-btn-left {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* 이미지 왼쪽에 위치하는 버튼 */
+  margin-left: 10px;
+  transform: translateY(-50%);
+}
+
+.image-modal-btn-right {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* 이미지 오른쪽에 위치하는 버튼 */
+  margin-right: 5px;
+  transform: translateY(-50%);
+}
+
+/* Webkit 기반 브라우저 (Chrome, Safari 등) */
+.custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none; /* 선택적 배경 제거 */
+  border: 1px solid #ccc; /* 테두리 추가 */
+  padding: 5px 10px; /* 여백 조정 */
+  font-family: "LGSmart_H";
+  font-size: 12px;
+}
+
+.Rectangle-346 {
+  width: 3px;
+  height: 18px;
+  flex-grow: 0;
+  background-color: #e23465;
+  margin: 3px 0 0 0;
+}
+
+.main-sub-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 0 7px;
+}
+
+.main-sub-btn {
+  width: 70px;
+  height: 30px;
+  flex-grow: 0;
+  padding: 10px 14px 3px 19px;
+  border-radius: 4px;
+  background-color: #edeef2;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+.main-table {
+  border: 1px solid #ddd;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: left;
+  padding: 0 8px;
+  line-height: 12px;
+  font-size: 11px;
+  padding-left: 20px;
+}
+
+.main-table-title {
+  border-top: 0px;
+  border-bottom: 2px solid #ddd;
+}
+
+.main-table-bottom {
+  border-bottom: 0px;
+}
+
+.main-table-row1 {
+  color: #439099;
+  font-weight: bold;
+}
+
+.main-sub-title2 {
+  font-family: LGSmart_H;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px 0px 0px 10px;
+  text-align: left;
+  color: #444;
+}
+
+/* styles.css */
+
+/* 캘린더 전체 스타일 */
+.react-calendar {
+  width: 100%; /* 캘린더의 너비를 100%로 설정 */
+}
+
+/* 월 이동 버튼 스타일 */
+.nav-btn {
+  background-color: #fff; /* 버튼 배경색 하얀색 */
+  border: none; /* 버튼 테두리 없앰 */
+  cursor: pointer; /* 포인터 커서 사용 */
+  font-size: 18px; /* 화살표 크기 설정 */
+  color: #333; /* 화살표 색상 */
+  padding: 5px 10px; /* 버튼 패딩 */
+}
+
+/* 캘린더 제목 스타일 */
+.calendar-header {
+  display: flex;
+  justify-content: flex-end; /* 제목을 오른쪽 정렬 */
+  margin-bottom: 10px;
+}
+
+.calendar-title {
+  font-family: "LGSmart_H", sans-serif; /* 폰트 패밀리 설정 */
+  font-size: 16px; /* 폰트 크기 설정 */
+  margin: 0 10px; /* 버튼과 제목 사이의 간격 */
+}
+
+/* 요일 이름 스타일 */
+.react-calendar__month-view__weekdays {
+  display: flex;
+  justify-content: center; /* 요일의 전체 레이아웃을 가운데 정렬 */
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  flex: 1; /* 각 요일 셀의 너비를 균등하게 분배 */
+  text-align: center; /* 요일의 텍스트 가운데 정렬 */
+  font-family: "LGSmart_H", sans-serif; /* 폰트 패밀리 설정 */
+  font-size: 12px; /* 폰트 크기 설정 */
+}
+
+.react-calendar__month-view__weekdays__weekday:nth-child(1) {
+  color: red; /* 일요일의 텍스트 색상 빨간색 */
+  border-left: 0px;
+}
+
+.react-calendar__month-view__weekdays__weekday:nth-child(7) {
+  color: blue; /* 토요일의 텍스트 색상 파란색 */
+  border-right: 0px;
+}
+
+/* 날짜 셀 */
+.react-calendar__tile {
+  background-color: #fff; /* 각 칸의 배경색을 하얀색으로 설정 */
+  border: 1px solid #ddd; /* 선택적으로 테두리 추가 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  font-family: "LGSmart_H", sans-serif; /* 폰트 패밀리 설정 */
+  font-size: 12px; /* 폰트 크기 설정 */
+  height: 32px;
+}
+
+.react-calendar__tile.other-month-tile {
+  color: #aaa; /* 이전/다음 월의 날짜 폰트 색상 회색으로 설정 */
+}
+
+.react-calendar__tile--active {
+  background-color: #007bff; /* 선택된 날짜의 배경색 */
+  color: white;
+}
+
+.react-calendar__tile--now {
+  border: 1px solid #007bff; /* 오늘 날짜의 테두리 */
+}
+
+.calendar-font {
+  font-family: LGSmart_H;
+  font-size: 13px;
+  color: #444;
+}
+
+.Write_Component1 {
+  width: 744px;
+  height: 89px;
+  flex-grow: 0;
+  padding: 5px;
+}
+
+.Ellipse-365 {
+  width: 3px;
+  height: 3px;
+  flex-grow: 0;
+  background-color: #888;
+}
+
+/* customDatePickerWidth.css */
+.custom-date-picker {
+  height: 30px !important;
+  width: 130px !important;
+  font-size: 12px;
+  padding: 0 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.Setting_Component {
+  width: 1790px;
+  height: 92vh;
+  margin: 0px 0px 0;
+  padding: 35px 35px 77px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+._Work_stac {
+  width: 120px;
+  height: 26px;
+  flex-grow: 0;
+  padding: 5px 6px 5px 5px;
+  border-radius: 4px;
+  border: solid 1px #dcdcdc;
+  background-color: #edeef2;
+}
+
+.PwChange_Component {
+  width: 1790px;
+  height: 92vh;
+  margin: 0px 0px 0;
+  padding: 0px 0px 77px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.PwChange_Header {
+  width: 1790px;
+  height: 172px;
+  flex-grow: 0;
+  padding: 0 373px;
+  background-color: #fff0f0;
+}
+
+.PwChange_Header_Image {
+  height: 172px;
+  flex-grow: 0;
+  background-color: #fff0f0;
+}
+
+.PwChange_Contents {
+  width: 1790px;
+  height: 870px;
+  margin: 70px 20px 10px 10px;
+  padding: 0px 639px 349px;
+}
+
+.Notice_Component {
+  width: 890px;
+  height: 92vh;
+  margin: 0px 0px 0;
+  padding: 35px 35px 77px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.notice-table {
+  border: 1px solid #ddd;
+  border-left: 0px;
+  border-right: 0px;
+  text-align: left;
+  padding: 0 8px;
+  line-height: 12px;
+  font-size: 11px;
+  padding-left: 20px;
+}
+
+.notice-table-title {
+  border-top: 0px;
+  border-bottom: 2px solid #ddd;
+}
+
+.Rectangle-890 {
+  width: 820px;
+  height: 85px;
+  flex-grow: 0;
+  padding: 0 0 12px;
+  background-color: #f7f8f9;
+  border-top: 2px solid black;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.Rectangle-891 {
+  width: 820px;
+  height: 430px;
+  flex-grow: 0;
+  padding: 12px 0 12px 5px;
+}
+
+.Rectangle-893 {
+  width: 820px;
+  height: 110px;
+  margin: 22px 0 0;
+  padding: 12px 10px 10px 14px;
+  border-radius: 6px;
+  border: solid 1px #d9d9d9;
+}
+
+.N {
+  width: 8px;
+  height: 10px;
+  font-family: LGSmart_H;
+  font-size: 8px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.Ellipse-368 {
+  width: 12px;
+  height: 12px;
+  padding: 0px 3px 0 3.5px;
+  background-color: #e23465;
+  border-radius: 50%; /* 원형으로 만들기 */
+}
+
+.Ellipse-369 {
+  width: 18px; /* 원의 크기 (필요에 따라 조정 가능) */
+  height: 18px;
+  background-color: #e23465;
+  border-radius: 50%; /* 원형으로 만들기 */
+  padding: 3px 0 0 0;
+  margin: 4px 5px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Ellipse-370 {
+  width: 12px;
+  height: 12px;
+  padding: 0px 3px 0 3.5px;
+  background-color: #e23465;
+  border-radius: 50%; /* 원형으로 만들기 */
+}
+
+.N1 {
+  font-size: 12px;
+  color: #fff;
+  font-family: LGSmart_H;
+  font-weight: 600;
+}
+
+.Council_Component {
+  width: 1790px;
+  height: 92vh;
+  margin: 0px 0px 0;
+  padding: 0px 0px 77px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.Council_Header {
+  width: 1790px;
+  height: 172px;
+  flex-grow: 0;
+  padding: 0 373px;
+  background-color: #fff0f0;
+}
+
+.Council_Header_Image {
+  height: 172px;
+  flex-grow: 0;
+  background-color: #fff0f0;
+}
+
+.Council_Contents {
+  width: 1790px;
+  height: 870px;
+  margin: 70px 20px 10px 10px;
+  padding: 0px 639px 349px;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px; /* 스크롤바의 높이(두께)를 6px로 설정 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* 스크롤바 핸들의 색상 */
+  border-radius: 10px; /* 핸들의 모서리를 둥글게 설정 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* 스크롤바 트랙의 색상 */
+}
+
+.hidden-select {
+  background: transparent;
+  border: none;
+  appearance: none;
+}
+
+.arrow-down {
+  pointer-events: none;
+}
+
+.custom-radio {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.custom-radio input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+.custom-radio-span {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  margin: 0;
+  padding: 5px 23px;
+  border-radius: 4px;
+  border: solid 1px #bebebe;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.custom-radio input[type="radio"]:checked + .custom-radio-span {
+  border: solid 1px #e23465;
+  color: #e23465;
+  background-color: #feeef0;
+}
