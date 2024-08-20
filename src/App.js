@@ -28,6 +28,7 @@ import ImproveSuggestWrite from "./pages/council/ImproveSuggestWrite.js";
 import DataResultWrite from "./pages/council/DataResultWrite.js";
 import Partner from "./pages/partner/Partner.js";
 import PartnerCreate from "./pages/partner/PartnerCreate.js";
+import Inspection from "./pages/inspection/Inspection.js";
 
 function App() {
   // const routing = useRoutes(Themeroutes);
@@ -82,6 +83,7 @@ function App() {
           path={defaultUrl + "/partnerCreate"}
           element={<PartnerCreate />}
         />
+        <Route path={defaultUrl + "/inspection"} element={<Inspection />} />
 
         <Route path={defaultUrl + "/about"} element={<About />} />
         <Route path={defaultUrl + "/excel"} element={<Excel />} />

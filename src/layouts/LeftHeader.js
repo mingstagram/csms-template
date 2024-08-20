@@ -212,7 +212,14 @@ const LeftHeader = ({ filter, setFilter }) => {
               >
                 협의체
               </div>
-              <div className="submenu-item">작업장 순회점검</div>
+              <div
+                className="submenu-item"
+                onClick={() => {
+                  navigate("/inspection");
+                }}
+              >
+                작업장 순회점검
+              </div>
               <div className="submenu-item">합동안전보건점검</div>
               <div className="submenu-item">임대설비 현황</div>
             </div>
