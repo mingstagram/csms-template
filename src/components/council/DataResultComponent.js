@@ -126,10 +126,12 @@ const DataResultComponent = () => {
                   asdf
                 </td>
                 <td className="main-table">
-                  <div className="Ellipse-368">
-                    <span className="N">N</span>
+                  <div className="d-flex">
+                    <div className="Ellipse-368">
+                      <span className="N">N</span>
+                    </div>
                     <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                      asdf
+                      평택 LG전자 화면 설계서 가이드 입니다.
                     </span>
                   </div>
                 </td>

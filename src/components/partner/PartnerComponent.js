@@ -7,7 +7,6 @@ import closeIcon from "../../assets/images/close-fill.png";
 import { useNavigate } from "react-router-dom";
 
 const PartnerComponent = () => {
-  // 반복 데이터 (여기서는 간단히 10개의 빈 요소가 있는 배열을 사용)
   const navigate = useNavigate();
   const rows = Array.from({ length: 10 });
   const [isOpen, setIsOpen] = useState(false);
@@ -286,8 +285,10 @@ const PartnerComponent = () => {
                   </td>
                   <td className="main-table main-table-row1">asdf</td>
                   <td className="main-table">
-                    <div className="Ellipse-370">
-                      <span className="N">N</span>
+                    <div className="d-flex">
+                      <div className="Ellipse-370">
+                        <span className="N">N</span>
+                      </div>
                       <span style={{ fontSize: "12px", marginLeft: "7px" }}>
                         asd
                       </span>

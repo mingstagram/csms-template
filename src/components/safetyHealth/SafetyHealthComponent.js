@@ -5,7 +5,7 @@ import { Button, Input } from "reactstrap";
 import searchBtn from "../../assets/images/Component 110.png";
 import DatePickerCustom from "../common/DatePickerCustom";
 
-const InspectionComponent = () => {
+const SafetyHealthComponent = () => {
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -17,7 +17,7 @@ const InspectionComponent = () => {
         <div className="d-flex">
           <div className="Rectangle-346" style={{ marginRight: "5px" }}></div>
           <span style={{ fontSize: "16px", fontWeight: "bold" }}>
-            작업장 순회점검
+            협동안전보건점검
           </span>
         </div>
         <div
@@ -38,7 +38,7 @@ const InspectionComponent = () => {
                 marginRight: "10px",
               }}
               onClick={() => {
-                navigate("/inspectionCreate");
+                navigate("/safetyHealthCreate");
               }}
             >
               점검 세부내용 등록
@@ -226,10 +226,12 @@ const InspectionComponent = () => {
                 <tr key={index}>
                   <td className="main-table ">{index + 1}</td>
                   <td className="main-table">
-                    <div className="Ellipse-370">
-                      <span className="N">N</span>
+                    <div className="d-flex">
+                      <div className="Ellipse-368">
+                        <span className="N">N</span>
+                      </div>
                       <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                        mpole
+                        엠폴
                       </span>
                     </div>
                   </td>
@@ -383,4 +385,4 @@ const InspectionComponent = () => {
   );
 };
 
-export default InspectionComponent;
+export default SafetyHealthComponent;

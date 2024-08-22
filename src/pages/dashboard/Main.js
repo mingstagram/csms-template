@@ -249,7 +249,16 @@ const Main = () => {
                     </tr>
                     <tr>
                       <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">asdf</td>
+                      <td className="main-table">
+                        <div className="d-flex">
+                          <div className="Ellipse-368">
+                            <span className="N">N</span>
+                          </div>
+                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                            asdf
+                          </span>
+                        </div>
+                      </td>
                       <td className="main-table">asd</td>
                       <td className="main-table">asd</td>
                     </tr>
@@ -347,7 +356,16 @@ const Main = () => {
                     </tr>
                     <tr>
                       <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
+                      <td className="main-table">
+                        <div className="d-flex">
+                          <div className="Ellipse-368">
+                            <span className="N">N</span>
+                          </div>
+                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                            asdf
+                          </span>
+                        </div>
+                      </td>
                       <td className="main-table">asd</td>
                       <td className="main-table">asd</td>
                     </tr>
@@ -451,7 +469,16 @@ const Main = () => {
                     </tr>
                     <tr>
                       <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">asdf</td>
+                      <td className="main-table">
+                        <div className="d-flex">
+                          <div className="Ellipse-368">
+                            <span className="N">N</span>
+                          </div>
+                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                            asdf
+                          </span>
+                        </div>
+                      </td>
                       <td className="main-table">asd</td>
                       <td className="main-table">asd</td>
                     </tr>
@@ -548,7 +575,16 @@ const Main = () => {
                     </tr>
                     <tr>
                       <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
+                      <td className="main-table">
+                        <div className="d-flex">
+                          <div className="Ellipse-368">
+                            <span className="N">N</span>
+                          </div>
+                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                            asdf
+                          </span>
+                        </div>
+                      </td>
                       <td className="main-table">asd</td>
                       <td className="main-table">asd</td>
                     </tr>
@@ -718,7 +754,16 @@ const Main = () => {
                     </tr>
                     <tr>
                       <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
+                      <td className="main-table">
+                        <div className="d-flex">
+                          <div className="Ellipse-368">
+                            <span className="N">N</span>
+                          </div>
+                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                            asdf
+                          </span>
+                        </div>
+                      </td>
                       <td className="main-table">asd</td>
                       <td className="main-table">asd</td>
                       <td className="main-table">asd</td>

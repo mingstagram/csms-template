@@ -220,8 +220,22 @@ const LeftHeader = ({ filter, setFilter }) => {
               >
                 작업장 순회점검
               </div>
-              <div className="submenu-item">합동안전보건점검</div>
-              <div className="submenu-item">임대설비 현황</div>
+              <div
+                className="submenu-item"
+                onClick={() => {
+                  navigate("/safetyHealth");
+                }}
+              >
+                합동안전보건점검
+              </div>
+              <div
+                className="submenu-item"
+                onClick={() => {
+                  navigate("/rentalEquipment");
+                }}
+              >
+                임대설비 현황
+              </div>
             </div>
           )}
 
@@ -242,10 +256,22 @@ const LeftHeader = ({ filter, setFilter }) => {
           </div>
           {activeMenu === 4 && (
             <div className="submenu">
-              <div className="submenu-item" style={{ fontSize: "10px" }}>
+              <div
+                className="submenu-item"
+                onClick={() => {
+                  navigate("/qualification");
+                }}
+                style={{ fontSize: "10px" }}
+              >
                 적격 수급인 선정 평가
               </div>
-              <div className="submenu-item" style={{ fontSize: "10px" }}>
+              <div
+                className="submenu-item"
+                onClick={() => {
+                  navigate("/safetyHealthMng");
+                }}
+                style={{ fontSize: "10px" }}
+              >
                 안전보건관리체계 구축
               </div>
             </div>

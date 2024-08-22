@@ -117,7 +117,13 @@ const Header = () => {
                 window.location.reload();
               }}
             >
-              <span style={{ fontSize: "26px", marginRight: "35px" }}>
+              <span
+                style={{
+                  fontSize: "26px",
+                  marginRight: "35px",
+                  marginLeft: "-20px",
+                }}
+              >
                 <img src={lg_logo}></img>
               </span>
               <span style={{ fontSize: "21px" }}>LG전자(평택) CSMS</span>

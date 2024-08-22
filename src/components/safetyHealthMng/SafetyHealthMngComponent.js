@@ -7,7 +7,7 @@ import DatePicker from "react-datepicker";
 import DatePickerCustom from "../common/DatePickerCustom";
 import { useNavigate } from "react-router-dom";
 
-const ImproveSuggestComponent = () => {
+const SafetyHealthMngComponent = () => {
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -17,64 +17,46 @@ const ImproveSuggestComponent = () => {
       <div className="Notice_Component">
         <div className="d-flex">
           <div className="Rectangle-346"></div>
-          <p className="main-sub-title">협의체</p>
+          <p className="main-sub-title">안전보건관리체계 구축</p>
         </div>
-        <div className="d-flex" style={{ paddingTop: "10px" }}>
-          <Button
-            style={{
-              width: "140px",
-              height: "34px",
-              borderRadius: "500px",
-              paddingTop: "4px",
-              marginRight: "10px",
-              border: "solid 1px #d9d9d9",
-              backgroundColor: "white",
-            }}
-            onClick={() => {
-              navigate("/dataResult");
-            }}
-          >
-            <span
-              style={{ fontSize: "12px", fontWeight: "bold", color: "#666" }}
+        <div
+          className="d-flex justify-content-between"
+          style={{ paddingTop: " 10px" }}
+        >
+          <div>
+            <Button
+              color="secondary"
+              style={{
+                width: "140px",
+                height: "30px",
+                backgroundColor: "#edeef2",
+                borderColor: "white",
+                color: "black",
+                fontSize: "12px",
+                fontFamily: "LGSmart_H",
+                marginRight: "13px",
+              }}
             >
-              협의체 자료 · 결과
-            </span>
-          </Button>
-          <Button
-            style={{
-              width: "140px",
-              height: "34px",
-              borderRadius: "500px",
-              paddingTop: "4px",
-              border: "solid 1px #d9d9d9",
-              backgroundColor: "#29282d",
-            }}
-            onClick={() => {
-              navigate("/improve");
-            }}
-          >
-            <span style={{ fontSize: "12px", fontWeight: "bold" }}>
-              개선제안 · 아차사고
-            </span>
-          </Button>
-        </div>
-        <div className="d-flex justify-content-end">
-          <Button
-            style={{
-              width: "100px",
-              height: "30px",
-              backgroundColor: "#e23465",
-              borderColor: "white",
-              color: "white",
-              fontSize: "12px",
-              marginRight: "5px",
-            }}
-            onClick={() => {
-              navigate("/improveWrite");
-            }}
-          >
-            등록
-          </Button>
+              샘플파일 다운로드
+            </Button>
+            <Button
+              color="secondary"
+              style={{
+                width: "140px",
+                height: "30px",
+                backgroundColor: "#e23465",
+                borderColor: "white",
+                color: "white",
+                fontSize: "12px",
+                fontFamily: "LGSmart_H",
+              }}
+              onClick={() => {
+                navigate("/safetyHealthMngCreate");
+              }}
+            >
+              등록
+            </Button>
+          </div>
         </div>
         {/* 테이블 추가 */}
         <div
@@ -96,15 +78,15 @@ const ImproveSuggestComponent = () => {
               <tr>
                 <th
                   className="notice-table notice-table-title"
-                  style={{ width: "15%" }}
+                  style={{ width: "20%" }}
                 >
                   업체명
                 </th>
                 <th
                   className="main-table main-table-title"
-                  style={{ width: "65%" }}
+                  style={{ width: "60%" }}
                 >
-                  제목
+                  등록 파일명
                 </th>
                 <th
                   className="main-table main-table-title"
@@ -132,7 +114,7 @@ const ImproveSuggestComponent = () => {
                       <span className="N">N</span>
                     </div>
                     <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                      평택 LG전자 화면 설계서 가이드 입니다.
+                      안전보건관리체계 구축 등록 파일명.xlsx
                     </span>
                   </div>
                 </td>
@@ -298,6 +280,20 @@ const ImproveSuggestComponent = () => {
                 dateFormat="yyyy/MM/dd" // 원하는 형식으로 변경 가능
               />
             </div>
+            <Input
+              type="select"
+              style={{
+                height: "30px",
+                width: "146px",
+                fontSize: "12px",
+                marginTop: "-7px",
+                marginLeft: "15px",
+              }}
+            >
+              <option key={0} value={0}>
+                업체명 선택
+              </option>
+            </Input>
             <div style={{ margin: "-7px 0 0 7px " }}>
               <img
                 src={searchBtn}
@@ -324,20 +320,7 @@ const ImproveSuggestComponent = () => {
           </div>
         </div>
         <div className="d-flex" style={{ paddingTop: "20px" }}>
-          <div style={{ flexBasis: "10%" }}>
-            <span
-              style={{
-                fontSize: "14px",
-                color: "#439899",
-                textAlign: "left",
-                fontWeight: "600",
-                paddingLeft: "5px",
-              }}
-            >
-              요청
-            </span>
-          </div>
-          <div style={{ flexBasis: "80%" }}>
+          <div style={{ flexBasis: "90%" }}>
             <span
               className="d-flex"
               style={{ fontSize: "18px", fontWeight: "600", color: "#444" }}
@@ -345,7 +328,7 @@ const ImproveSuggestComponent = () => {
               <div className="Ellipse-369">
                 <span className="N1">N</span>
               </div>
-              평택 LG전자 화면 설계서 가이드 입니다.
+              안전보건관리체계 구축 등록 파일명.xlsx
             </span>
           </div>
           <div style={{ flexBasis: "10%" }}>
@@ -460,4 +443,4 @@ const ImproveSuggestComponent = () => {
   );
 };
 
-export default ImproveSuggestComponent;
+export default SafetyHealthMngComponent;

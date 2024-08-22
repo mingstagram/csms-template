@@ -29,6 +29,14 @@ import DataResultWrite from "./pages/council/DataResultWrite.js";
 import Partner from "./pages/partner/Partner.js";
 import PartnerCreate from "./pages/partner/PartnerCreate.js";
 import Inspection from "./pages/inspection/Inspection.js";
+import InspectionCreate from "./pages/inspection/InspectionCreate.js";
+import SafetyHealth from "./pages/safetyHealth/SafetyHealth.js";
+import SafetyHealthCreate from "./pages/safetyHealth/SafetyHealthCreate.js";
+import RentalEquipment from "./pages/rentalEquipment/RentalEquipment.js";
+import Qualification from "./pages/qualification/Qualification.js";
+import QualificationCreate from "./pages/qualification/QualificationCreate.js";
+import SafetyHealthMng from "./pages/safetyHealthMng/SafetyHealthMng.js";
+import SafetyHealthMngCreate from "./pages/safetyHealthMng/SafetyHealthMngCreate.js";
 
 function App() {
   // const routing = useRoutes(Themeroutes);
@@ -84,6 +92,35 @@ function App() {
           element={<PartnerCreate />}
         />
         <Route path={defaultUrl + "/inspection"} element={<Inspection />} />
+        <Route
+          path={defaultUrl + "/inspectionCreate"}
+          element={<InspectionCreate />}
+        />
+        <Route path={defaultUrl + "/safetyHealth"} element={<SafetyHealth />} />
+        <Route
+          path={defaultUrl + "/safetyHealthCreate"}
+          element={<SafetyHealthCreate />}
+        />
+        <Route
+          path={defaultUrl + "/rentalEquipment"}
+          element={<RentalEquipment />}
+        />
+        <Route
+          path={defaultUrl + "/qualification"}
+          element={<Qualification />}
+        />
+        <Route
+          path={defaultUrl + "/qualificationCreate"}
+          element={<QualificationCreate />}
+        />
+        <Route
+          path={defaultUrl + "/safetyHealthMng"}
+          element={<SafetyHealthMng />}
+        />
+        <Route
+          path={defaultUrl + "/safetyHealthMngCreate"}
+          element={<SafetyHealthMngCreate />}
+        />
 
         <Route path={defaultUrl + "/about"} element={<About />} />
         <Route path={defaultUrl + "/excel"} element={<Excel />} />
