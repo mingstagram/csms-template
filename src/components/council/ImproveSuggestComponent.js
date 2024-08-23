@@ -8,6 +8,7 @@ import DatePickerCustom from "../common/DatePickerCustom";
 import { useNavigate } from "react-router-dom";
 
 const ImproveSuggestComponent = () => {
+  const rows = Array.from({ length: 5 });
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -119,70 +120,29 @@ const ImproveSuggestComponent = () => {
                   수정일
                 </th>
               </tr>
-              <tr>
-                <td
-                  className="main-table main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">
-                  <div className="d-flex">
-                    <div className="Ellipse-368">
-                      <span className="N">N</span>
+
+              {rows.map((_, index) => (
+                <tr key={index} className="table-row">
+                  <td
+                    className="main-table main-table-row1"
+                    style={{ color: "black" }}
+                  >
+                    asdf
+                  </td>
+                  <td className="main-table">
+                    <div className="d-flex">
+                      <div className="Ellipse-368">
+                        <span className="N">N</span>
+                      </div>
+                      <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                        평택 LG전자 화면 설계서 가이드 입니다.
+                      </span>
                     </div>
-                    <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                      평택 LG전자 화면 설계서 가이드 입니다.
-                    </span>
-                  </div>
-                </td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td
-                  className="main-table main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td
-                  className="main-table main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td
-                  className="main-table main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td
-                  className="main-table  main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
+                  </td>
+                  <td className="main-table">asd</td>
+                  <td className="main-table">asd</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

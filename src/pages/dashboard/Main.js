@@ -13,6 +13,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Main = () => {
+  const rows1 = Array.from({ length: 5 });
   const [date, setDate] = useState(new Date());
   const [yearList, setYearList] = useState([]);
   const [monthList, setMonthList] = useState([]);
@@ -149,6 +150,14 @@ const Main = () => {
     navigate("/announce");
   };
 
+  const handleDataResultPage = () => {
+    navigate("/dataResult");
+  };
+
+  const handleImprovePage = () => {
+    navigate("/improve");
+  };
+
   useEffect(() => {
     getRiskDateList();
     getNoticeList();
@@ -247,47 +256,25 @@ const Main = () => {
                         수정일
                       </th>
                     </tr>
-                    <tr>
-                      <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">
-                        <div className="d-flex">
-                          <div className="Ellipse-368">
-                            <span className="N">N</span>
+                    {rows1.map((_, index) => (
+                      <tr>
+                        <td className="main-table main-table-row1">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
                           </div>
-                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                            asdf
-                          </span>
-                        </div>
-                      </td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-bottom  main-table-row1">
-                        asdf
-                      </td>
-                      <td className="main-table main-table-bottom">asdf</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                    </tr>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -308,7 +295,11 @@ const Main = () => {
                   <div className="Rectangle-346"></div>
                   <p className="main-sub-title">협의체 자료 · 결과</p>
                 </div>
-                <span className="main-sub-btn" style={{ cursor: "pointer" }}>
+                <span
+                  className="main-sub-btn"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleDataResultPage}
+                >
                   더보기
                 </span>
               </div>
@@ -354,45 +345,25 @@ const Main = () => {
                         수정일
                       </th>
                     </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">
-                        <div className="d-flex">
-                          <div className="Ellipse-368">
-                            <span className="N">N</span>
+                    {rows1.map((_, index) => (
+                      <tr>
+                        <td className="main-table">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
                           </div>
-                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                            asdf
-                          </span>
-                        </div>
-                      </td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-bottom">asdf</td>
-                      <td className="main-table main-table-bottom">asdf</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                    </tr>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -467,47 +438,25 @@ const Main = () => {
                         수정일
                       </th>
                     </tr>
-                    <tr>
-                      <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">
-                        <div className="d-flex">
-                          <div className="Ellipse-368">
-                            <span className="N">N</span>
+                    {rows1.map((_, index) => (
+                      <tr>
+                        <td className="main-table main-table-row1">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
                           </div>
-                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                            asdf
-                          </span>
-                        </div>
-                      </td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-row1">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-bottom main-table-row1">
-                        asdf
-                      </td>
-                      <td className="main-table main-table-bottom">asdf</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                    </tr>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -527,7 +476,11 @@ const Main = () => {
                   <div className="Rectangle-346"></div>
                   <p className="main-sub-title">개선제안 · 아차사고</p>
                 </div>
-                <span className="main-sub-btn" style={{ cursor: "pointer" }}>
+                <span
+                  className="main-sub-btn"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleImprovePage}
+                >
                   더보기
                 </span>
               </div>
@@ -573,45 +526,25 @@ const Main = () => {
                         수정일
                       </th>
                     </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">
-                        <div className="d-flex">
-                          <div className="Ellipse-368">
-                            <span className="N">N</span>
+                    {rows1.map((_, index) => (
+                      <tr>
+                        <td className="main-table">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
                           </div>
-                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                            asdf
-                          </span>
-                        </div>
-                      </td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-bottom">asdf</td>
-                      <td className="main-table main-table-bottom">asdf</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                    </tr>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -752,55 +685,27 @@ const Main = () => {
                         장소
                       </th>
                     </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">
-                        <div className="d-flex">
-                          <div className="Ellipse-368">
-                            <span className="N">N</span>
+                    {rows1.map((_, index) => (
+                      <tr>
+                        <td className="main-table">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
                           </div>
-                          <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                            asdf
-                          </span>
-                        </div>
-                      </td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asdf</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                      <td className="main-table">asd</td>
-                    </tr>
-                    <tr>
-                      <td className="main-table main-table-bottom">asdf</td>
-                      <td className="main-table main-table-bottom">asdf</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                      <td className="main-table main-table-bottom">asd</td>
-                    </tr>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>

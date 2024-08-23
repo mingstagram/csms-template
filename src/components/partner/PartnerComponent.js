@@ -276,7 +276,7 @@ const PartnerComponent = () => {
                 </th>
               </tr>
               {rows.map((_, index) => (
-                <tr key={index}>
+                <tr key={index} className="table-row">
                   <td className="main-table">
                     <Input
                       type="checkbox"

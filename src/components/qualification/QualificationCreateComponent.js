@@ -50,7 +50,7 @@ const QualificationCreateComponent = () => {
             <div
               style={{
                 flexBasis: "20%",
-                padding: "10px 10px",
+                padding: "20px 10px",
                 fontSize: "13px",
                 fontWeight: "bold",
                 marginTop: "5px",

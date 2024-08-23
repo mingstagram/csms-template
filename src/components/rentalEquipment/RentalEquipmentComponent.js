@@ -176,7 +176,7 @@ const RentalEquipmentComponent = () => {
                 </th>
               </tr>
               {rows.map((_, index) => (
-                <tr key={index}>
+                <tr key={index} className="table-row">
                   <td className="main-table">큐원에이트</td>
                   <td className="main-table">
                     <div className="d-flex">

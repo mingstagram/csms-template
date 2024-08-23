@@ -8,6 +8,7 @@ import DatePickerCustom from "../common/DatePickerCustom";
 import { useNavigate } from "react-router-dom";
 
 const SafetyHealthMngComponent = () => {
+  const rows = Array.from({ length: 5 });
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -101,70 +102,28 @@ const SafetyHealthMngComponent = () => {
                   수정일
                 </th>
               </tr>
-              <tr>
-                <td
-                  className="main-table main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">
-                  <div className="d-flex">
-                    <div className="Ellipse-368">
-                      <span className="N">N</span>
+              {rows.map((_, index) => (
+                <tr key={index} className="table-row">
+                  <td
+                    className="main-table main-table-row1"
+                    style={{ color: "black" }}
+                  >
+                    asdf
+                  </td>
+                  <td className="main-table">
+                    <div className="d-flex">
+                      <div className="Ellipse-368">
+                        <span className="N">N</span>
+                      </div>
+                      <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                        안전보건관리체계 구축 등록 파일명.xlsx
+                      </span>
                     </div>
-                    <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                      안전보건관리체계 구축 등록 파일명.xlsx
-                    </span>
-                  </div>
-                </td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td
-                  className="main-table main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td
-                  className="main-table main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td
-                  className="main-table main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td
-                  className="main-table  main-table-row1"
-                  style={{ color: "black" }}
-                >
-                  asdf
-                </td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
+                  </td>
+                  <td className="main-table">asd</td>
+                  <td className="main-table">asd</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

@@ -223,7 +223,13 @@ const SafetyHealthComponent = () => {
                 </th>
               </tr>
               {rows.map((_, index) => (
-                <tr key={index}>
+                <tr
+                  key={index}
+                  className="table-row"
+                  onClick={() => {
+                    navigate("/safetyHealthDetail");
+                  }}
+                >
                   <td className="main-table ">{index + 1}</td>
                   <td className="main-table">
                     <div className="d-flex">

@@ -72,7 +72,7 @@ const QualificationComponent = () => {
                 </th>
               </tr>
               {rows1.map((_, index) => (
-                <tr>
+                <tr key={index} className="table-row">
                   <td className="main-table">
                     <div className="d-flex">
                       <div className="Ellipse-368">
@@ -233,7 +233,7 @@ const QualificationComponent = () => {
                 </th>
               </tr>
               {rows2.map((_, index) => (
-                <tr key={index}>
+                <tr key={index} className="table-row">
                   <td className="main-table">
                     <div className="d-flex">
                       <div className="Ellipse-368">

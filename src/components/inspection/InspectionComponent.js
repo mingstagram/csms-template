@@ -10,7 +10,6 @@ const InspectionComponent = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const rows = Array.from({ length: 7 });
-
   return (
     <div style={{ fontFamily: "LGSmart_H" }}>
       <div className="Setting_Component">
@@ -223,7 +222,13 @@ const InspectionComponent = () => {
                 </th>
               </tr>
               {rows.map((_, index) => (
-                <tr key={index}>
+                <tr
+                  key={index}
+                  className="table-row"
+                  onClick={() => {
+                    navigate("/inspectionDetail");
+                  }}
+                >
                   <td className="main-table ">{index + 1}</td>
                   <td className="main-table">
                     <div className="Ellipse-370">

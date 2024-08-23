@@ -1,23 +1,8 @@
 import { Navigate, Route, Routes, useRoutes } from "react-router-dom";
-import Themeroutes from "./routes/Router";
-import Header from "./layouts/Header";
-import Sidebar from "./layouts/Sidebar";
-import { Container } from "reactstrap";
 import Dashboard from "./pages/Dashboard";
-import About from "./pages/About";
-import Excel from "./pages/Excel";
 import Login from "./pages/Login";
-import { useAtom } from "jotai";
-import { shouldRenderHeaderState } from "../src/data/atom.js";
-import Signup from "./pages/Signup";
-import MatrixList from "./pages/matrixList/MatrixList";
-import MatrixDetail from "./pages/matrixList/MatrixDetail";
 import { useState } from "react";
-import MatrixUpdate from "./pages/matrixList/MatrixUpdate";
-import MatrixCreate from "./pages/matrixList/MatrixCreate";
 import Setting from "./pages/setting/Setting.js";
-import Privacy from "./pages/Privacy";
-import Dataroom from "./pages/dataroom/Dataroom.js";
 import Regist from "./pages/regist/Regist.js";
 import PasswordChange from "./pages/passwordChange/PasswordChange.js";
 import Notice from "./pages/notice/Notice.js";
@@ -37,6 +22,10 @@ import Qualification from "./pages/qualification/Qualification.js";
 import QualificationCreate from "./pages/qualification/QualificationCreate.js";
 import SafetyHealthMng from "./pages/safetyHealthMng/SafetyHealthMng.js";
 import SafetyHealthMngCreate from "./pages/safetyHealthMng/SafetyHealthMngCreate.js";
+import InspectionUpdate from "./pages/inspection/InspectionUpdate.js";
+import InspectionDetail from "./pages/inspection/InspectionDetail.js";
+import SafetyHealthDetail from "./pages/safetyHealth/SafetyHealthDetail.js";
+import SafetyHealthUpdate from "./pages/safetyHealth/SafetyHealthUpdate.js";
 
 function App() {
   // const routing = useRoutes(Themeroutes);
@@ -96,11 +85,29 @@ function App() {
           path={defaultUrl + "/inspectionCreate"}
           element={<InspectionCreate />}
         />
+        <Route
+          path={defaultUrl + "/inspectionUpdate"}
+          element={<InspectionUpdate />}
+        />
+        <Route
+          path={defaultUrl + "/inspectionDetail"}
+          element={<InspectionDetail />}
+        />
+
         <Route path={defaultUrl + "/safetyHealth"} element={<SafetyHealth />} />
         <Route
           path={defaultUrl + "/safetyHealthCreate"}
           element={<SafetyHealthCreate />}
         />
+        <Route
+          path={defaultUrl + "/safetyHealthDetail"}
+          element={<SafetyHealthDetail />}
+        />
+        <Route
+          path={defaultUrl + "/safetyHealthUpdate"}
+          element={<SafetyHealthUpdate />}
+        />
+
         <Route
           path={defaultUrl + "/rentalEquipment"}
           element={<RentalEquipment />}
@@ -122,25 +129,7 @@ function App() {
           element={<SafetyHealthMngCreate />}
         />
 
-        <Route path={defaultUrl + "/about"} element={<About />} />
-        <Route path={defaultUrl + "/excel"} element={<Excel />} />
-        <Route path={defaultUrl + "/signup"} element={<Signup />} />
         <Route path={defaultUrl + "/"} element={<Login />} />
-        <Route path={defaultUrl + "/matrixList"} element={<MatrixList />} />
-        <Route path={defaultUrl + "/privacy"} element={<Privacy />} />
-        <Route
-          path={defaultUrl + "/matrixList/detail"}
-          element={<MatrixDetail />}
-        />
-        <Route
-          path={defaultUrl + "/matrixList/update"}
-          element={<MatrixUpdate />}
-        />
-        <Route
-          path={defaultUrl + "/matrixList/create"}
-          element={<MatrixCreate />}
-        />
-        <Route path={defaultUrl + "/dataroom"} element={<Dataroom />} />
         {/* 기본 경로에 대한 Navigate 설정 */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

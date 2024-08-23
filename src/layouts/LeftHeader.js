@@ -55,7 +55,7 @@ const LeftHeader = ({ filter, setFilter }) => {
   };
 
   const toggleMenu = (menuIndex) => {
-    console.log(menuIndex);
+    console.log(menuIndex, activeMenu);
     if (activeMenu === menuIndex) {
       setActiveMenu(null);
     } else {
@@ -110,7 +110,7 @@ const LeftHeader = ({ filter, setFilter }) => {
       case "/dashboard":
         setActiveMenu(1);
         break;
-      case "/dashboard2":
+      case "/partner":
         setActiveMenu(2);
         break;
       case "/dashboard3":

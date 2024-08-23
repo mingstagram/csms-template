@@ -4,6 +4,7 @@ import component179 from "../../assets/images/Component-179.png";
 import { Button, Input } from "reactstrap";
 
 const AnnounceComponent = () => {
+  const rows = Array.from({ length: 5 });
   return (
     <div className="d-flex" style={{ fontFamily: "LGSmart_H" }}>
       <div className="Notice_Component">
@@ -54,43 +55,21 @@ const AnnounceComponent = () => {
                   수정일
                 </th>
               </tr>
-              <tr>
-                <td className="main-table main-table-row1">asdf</td>
-                <td className="main-table">
-                  <div className="Ellipse-368">
-                    <span className="N">N</span>
-                    <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                      asdf
-                    </span>
-                  </div>
-                </td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td className="main-table main-table-row1">asdf</td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td className="main-table main-table-row1">asdf</td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td className="main-table main-table-row1">asdf</td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
-              <tr>
-                <td className="main-table  main-table-row1">asdf</td>
-                <td className="main-table">asdf</td>
-                <td className="main-table">asd</td>
-                <td className="main-table">asd</td>
-              </tr>
+              {rows.map((_, index) => (
+                <tr key={index} className="table-row">
+                  <td className="main-table main-table-row1">asdf</td>
+                  <td className="main-table">
+                    <div className="Ellipse-368">
+                      <span className="N">N</span>
+                      <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                        asdf
+                      </span>
+                    </div>
+                  </td>
+                  <td className="main-table">asd</td>
+                  <td className="main-table">asd</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
