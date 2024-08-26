@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import plusIconNoBackgroundWhite from "../../assets/images/plus-icon-nobackground-white.png";
 import { Button, Input } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
-const PartnerCreateComponent = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+const PartnerUpdateComponent = () => {
+  const navigate = useNavigate();
+  const [selectedOption, setSelectedOption] = useState("사용중");
 
   const handleOptionChange = (value) => {
     setSelectedOption(value);
@@ -39,6 +41,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="업체명을 입력하세요."
                   style={{ width: "950px", height: "30px", fontSize: "12px" }}
+                  value={"엠폴"}
                 />
               </div>
             </div>
@@ -121,7 +124,7 @@ const PartnerCreateComponent = () => {
                   <Input type="radio" name="radioGroup" /> 요청
                 </span>
                 <span>
-                  <Input type="radio" name="radioGroup" /> 물류
+                  <Input type="radio" name="radioGroup" checked /> 물류
                 </span>
                 <span>
                   <Input type="radio" name="radioGroup" /> 생산
@@ -173,6 +176,7 @@ const PartnerCreateComponent = () => {
                     type="text"
                     style={{ width: "230px", height: "30px", fontSize: "12px" }}
                     placeholder="동을 입력하세요."
+                    value={"P"}
                   />{" "}
                   <span style={{ marginLeft: "7px", marginTop: "7px" }}>
                     동
@@ -183,6 +187,7 @@ const PartnerCreateComponent = () => {
                     type="text"
                     style={{ width: "230px", height: "30px", fontSize: "12px" }}
                     placeholder="층을 입력하세요."
+                    value={"3"}
                   />{" "}
                   <span style={{ marginLeft: "7px", marginTop: "7px" }}>
                     층
@@ -193,6 +198,7 @@ const PartnerCreateComponent = () => {
                     type="text"
                     style={{ width: "230px", height: "30px", fontSize: "12px" }}
                     placeholder="세부위치를 입력하세요."
+                    value={"A존"}
                   />{" "}
                   <span style={{ marginLeft: "7px", marginTop: "7px" }}>
                     세부위치
@@ -237,6 +243,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="본사 주소를 입력하세요."
                   style={{ width: "950px", height: "30px", fontSize: "12px" }}
+                  value={"서울시 강서구 강서로 396  (등촌동, 팬코타워) 5층"}
                 />
               </div>
             </div>
@@ -253,6 +260,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="사업자 등록번호를 입력하세요."
                   style={{ width: "360px", height: "30px", fontSize: "12px" }}
+                  value={"607-86-12034"}
                 />
               </div>
             </div>
@@ -272,6 +280,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="대표자명을 입력하세요."
                   style={{ width: "350px", height: "30px", fontSize: "12px" }}
+                  value={"박기운"}
                 />
               </div>
             </div>
@@ -288,6 +297,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="대표자 연락처를 입력하세요."
                   style={{ width: "350px", height: "30px", fontSize: "12px" }}
+                  value={"010-1235-4454"}
                 />
               </div>
             </div>
@@ -304,6 +314,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="대표자 이메일을 입력하세요."
                   style={{ width: "360px", height: "30px", fontSize: "12px" }}
+                  value={"abcd@naver.com"}
                 />
               </div>
             </div>
@@ -323,6 +334,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="상주 총괄 책임자명을 입력하세요."
                   style={{ width: "350px", height: "30px", fontSize: "12px" }}
+                  value={"박기운"}
                 />
               </div>
             </div>
@@ -339,6 +351,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="책임자 연락처를 입력하세요."
                   style={{ width: "350px", height: "30px", fontSize: "12px" }}
+                  value={"010-1234-4485"}
                 />
               </div>
             </div>
@@ -355,6 +368,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="책임자 이메일을 입력하세요."
                   style={{ width: "360px", height: "30px", fontSize: "12px" }}
+                  value={"abcd@naver.com"}
                 />
               </div>
             </div>
@@ -374,6 +388,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="안전보건관리 담당자명을 입력하세요."
                   style={{ width: "350px", height: "30px", fontSize: "12px" }}
+                  value={"박기운"}
                 />
               </div>
             </div>
@@ -390,6 +405,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="담당자 연락처를 입력하세요."
                   style={{ width: "350px", height: "30px", fontSize: "12px" }}
+                  value={"010-4549-4451"}
                 />
               </div>
             </div>
@@ -406,6 +422,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="담당자 이메일을 입력하세요."
                   style={{ width: "360px", height: "30px", fontSize: "12px" }}
+                  value={"abcd@naver.com"}
                 />
               </div>
             </div>
@@ -447,6 +464,7 @@ const PartnerCreateComponent = () => {
                     type="text"
                     placeholder="몇명인지 숫자로 입력하세요."
                     style={{ width: "176px", height: "30px", fontSize: "12px" }}
+                    value={"15"}
                   />{" "}
                   <span
                     style={{
@@ -471,8 +489,11 @@ const PartnerCreateComponent = () => {
               <div style={{ flexBasis: "76%" }}>
                 <Input
                   type="text"
-                  placeholder="업무내용 상세를 입력하세요."
+                  placeholder="담당자 연락처를 입력하세요."
                   style={{ width: "973px", height: "30px", fontSize: "12px" }}
+                  value={
+                    "안전은 선택이 아닌 필수입니다. 모든 작업 시 안전 규정을 준수하세요. 작업 전 보호 장비를 착용하고, 안전 절차를 확인하십시오."
+                  }
                 />
               </div>
             </div>
@@ -492,6 +513,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="계약 부서명을 입력하세요."
                   style={{ width: "350px", height: "30px", fontSize: "12px" }}
+                  value={"평택안전보건팀"}
                 />
               </div>
             </div>
@@ -508,6 +530,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="계약 부서장을 입력하세요."
                   style={{ width: "350px", height: "30px", fontSize: "12px" }}
+                  value={"박기운"}
                 />
               </div>
             </div>
@@ -524,6 +547,7 @@ const PartnerCreateComponent = () => {
                   type="text"
                   placeholder="계약 담당자를 입력하세요."
                   style={{ width: "360px", height: "30px", fontSize: "12px" }}
+                  value={"박기운"}
                 />
               </div>
             </div>
@@ -563,13 +587,31 @@ const PartnerCreateComponent = () => {
               style={{
                 width: "180px",
                 height: "40px",
+                backgroundColor: "#dfe0e4",
+                borderColor: "white",
+                color: "black",
+                fontSize: "12px",
+              }}
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              이전
+            </Button>
+          </div>
+          <div>
+            <Button
+              style={{
+                width: "180px",
+                height: "40px",
                 backgroundColor: "#e23465",
                 borderColor: "white",
                 color: "white",
                 fontSize: "12px",
+                marginLeft: "10px",
               }}
             >
-              등록
+              수정완료
             </Button>
           </div>
         </div>
@@ -578,4 +620,4 @@ const PartnerCreateComponent = () => {
   );
 };
 
-export default PartnerCreateComponent;
+export default PartnerUpdateComponent;

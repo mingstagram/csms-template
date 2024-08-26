@@ -1282,6 +1282,16 @@
   background-color: #fff;
 }
 
+.Notice_Expend_Component {
+  width: 1790px;
+  height: 92vh;
+  margin: 0px 0px 0;
+  padding: 50px 523px 77px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
 .notice-table {
   border: 1px solid #ddd;
   border-left: 0px;
@@ -1561,4 +1571,9 @@
 
 .table-row:hover td {
   background-color: #f0f0f0; /* Light gray color */
+}
+
+.partner-font {
+  font-size: 13px;
+  padding-top: 5px;
 }

@@ -1,125 +1,134 @@
-import React from "react";
+import React, { useState } from "react";
 import attachFile from "../../assets/images/attach_file.png";
 import component179 from "../../assets/images/Component-179.png";
+import component180 from "../../assets/images/Component-180.png";
 import { Button, Input } from "reactstrap";
 
 const AnnounceComponent = () => {
   const rows = Array.from({ length: 5 });
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleClick = () => {
+    setIsExpanded((prevState) => !prevState);
+  };
+
   return (
     <div className="d-flex" style={{ fontFamily: "LGSmart_H" }}>
-      <div className="Notice_Component">
-        <div className="d-flex">
-          <div className="Rectangle-346"></div>
-          <p className="main-sub-title">공지사항</p>
-        </div>
-        {/* 테이블 추가 */}
-        <div
-          style={{
-            width: "810px",
-            height: "250px",
-            overflow: "hidden",
-            paddingTop: "10px",
-          }}
-        >
-          <table
+      {!isExpanded && (
+        <div className="Notice_Component">
+          <div className="d-flex">
+            <div className="Rectangle-346"></div>
+            <p className="main-sub-title">공지사항</p>
+          </div>
+          {/* 테이블 추가 */}
+          <div
             style={{
-              width: "100%",
-              height: "100%",
-              borderCollapse: "collapse",
+              width: "810px",
+              height: "250px",
+              overflow: "hidden",
+              paddingTop: "10px",
             }}
           >
-            <tbody>
-              <tr>
-                <th
-                  className="notice-table notice-table-title"
-                  style={{ width: "15%" }}
-                >
-                  분류
-                </th>
-                <th
-                  className="main-table main-table-title"
-                  style={{ width: "65%" }}
-                >
-                  제목
-                </th>
-                <th
-                  className="main-table main-table-title"
-                  style={{ width: "10%" }}
-                >
-                  등록일
-                </th>
-                <th
-                  className="main-table main-table-title"
-                  style={{ width: "10%" }}
-                >
-                  수정일
-                </th>
-              </tr>
-              {rows.map((_, index) => (
-                <tr key={index} className="table-row">
-                  <td className="main-table main-table-row1">asdf</td>
-                  <td className="main-table">
-                    <div className="Ellipse-368">
-                      <span className="N">N</span>
-                      <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                        asdf
-                      </span>
-                    </div>
-                  </td>
-                  <td className="main-table">asd</td>
-                  <td className="main-table">asd</td>
+            <table
+              style={{
+                width: "100%",
+                height: "100%",
+                borderCollapse: "collapse",
+              }}
+            >
+              <tbody>
+                <tr>
+                  <th
+                    className="notice-table notice-table-title"
+                    style={{ width: "15%" }}
+                  >
+                    분류
+                  </th>
+                  <th
+                    className="main-table main-table-title"
+                    style={{ width: "65%" }}
+                  >
+                    제목
+                  </th>
+                  <th
+                    className="main-table main-table-title"
+                    style={{ width: "10%" }}
+                  >
+                    등록일
+                  </th>
+                  <th
+                    className="main-table main-table-title"
+                    style={{ width: "10%" }}
+                  >
+                    수정일
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            fontSize: "13px",
-            height: "40px",
-            paddingTop: "10px",
-          }}
-        >
-          <div className="pageFooter">
-            {/* {pageInfo.currentPage}페이지 {pageInfo.firstPage}-{pageInfo.lastPage}{" "} */}
-            1페이지 1-15 &nbsp;&nbsp;
+                {rows.map((_, index) => (
+                  <tr key={index} className="table-row">
+                    <td className="main-table main-table-row1">asdf</td>
+                    <td className="main-table">
+                      <div className="Ellipse-368">
+                        <span className="N">N</span>
+                        <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                          asdf
+                        </span>
+                      </div>
+                    </td>
+                    <td className="main-table">asd</td>
+                    <td className="main-table">asd</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <div style={{ marginRight: "auto" }}>
-            <button
-              className="Rectangle-331"
-              style={{ paddingTop: "2px" }}
-              //   onClick={() => {
-              //     paginationData.setPage(filter.pageNum - 1);
-              //   }}
-              //   disabled={
-              //     arr.slice(firstNum - 1, lastNum).length === 0 ||
-              //     filter.pageNum === 1
-              //   }
-              outline
-            >
-              <b>{"<"}</b>
-            </button>
-            &nbsp;
-            <button
-              className="Rectangle-332"
-              style={{ paddingTop: "2px" }}
-              //   onClick={() => {
-              //     paginationData.setPage(filter.pageNum + 1);
-              //   }}
-              //   disabled={
-              //     arr.slice(firstNum - 1, lastNum).length === 0 ||
-              //     filter.pageNum === numPages
-              //   }
-              outline
-            >
-              <b>&gt;</b>
-            </button>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              fontSize: "13px",
+              height: "40px",
+              paddingTop: "10px",
+            }}
+          >
+            <div className="pageFooter">
+              {/* {pageInfo.currentPage}페이지 {pageInfo.firstPage}-{pageInfo.lastPage}{" "} */}
+              1페이지 1-15 &nbsp;&nbsp;
+            </div>
+            <div style={{ marginRight: "auto" }}>
+              <button
+                className="Rectangle-331"
+                style={{ paddingTop: "2px" }}
+                //   onClick={() => {
+                //     paginationData.setPage(filter.pageNum - 1);
+                //   }}
+                //   disabled={
+                //     arr.slice(firstNum - 1, lastNum).length === 0 ||
+                //     filter.pageNum === 1
+                //   }
+                outline
+              >
+                <b>{"<"}</b>
+              </button>
+              &nbsp;
+              <button
+                className="Rectangle-332"
+                style={{ paddingTop: "2px" }}
+                //   onClick={() => {
+                //     paginationData.setPage(filter.pageNum + 1);
+                //   }}
+                //   disabled={
+                //     arr.slice(firstNum - 1, lastNum).length === 0 ||
+                //     filter.pageNum === numPages
+                //   }
+                outline
+              >
+                <b>&gt;</b>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <div
         style={{
           width: "8px",
@@ -129,9 +138,20 @@ const AnnounceComponent = () => {
           marginLeft: "3px",
         }}
       >
-        <img src={component179} />
+        <img
+          style={{ cursor: "pointer" }}
+          onClick={handleClick}
+          src={isExpanded ? component180 : component179}
+        />
       </div>
-      <div className="Notice_Component" style={{ paddingTop: "60px" }}>
+      <div
+        className={isExpanded ? "Notice_Expend_Component" : "Notice_Component"}
+        style={{
+          paddingTop: "60px",
+          width: isExpanded ? "1860px" : "initial", // Expand width when clicked
+          transition: "width 0.3s ease", // Smooth transition
+        }}
+      >
         <div>
           <div
             style={{

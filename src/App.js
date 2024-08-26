@@ -26,6 +26,8 @@ import InspectionUpdate from "./pages/inspection/InspectionUpdate.js";
 import InspectionDetail from "./pages/inspection/InspectionDetail.js";
 import SafetyHealthDetail from "./pages/safetyHealth/SafetyHealthDetail.js";
 import SafetyHealthUpdate from "./pages/safetyHealth/SafetyHealthUpdate.js";
+import PartnerUpdate from "./pages/partner/PartnerUpdate.js";
+import PartnerDetail from "./pages/partner/PartnerDetail.js";
 
 function App() {
   // const routing = useRoutes(Themeroutes);
@@ -80,6 +82,15 @@ function App() {
           path={defaultUrl + "/partnerCreate"}
           element={<PartnerCreate />}
         />
+        <Route
+          path={defaultUrl + "/partnerDetail"}
+          element={<PartnerDetail />}
+        />
+        <Route
+          path={defaultUrl + "/partnerUpdate"}
+          element={<PartnerUpdate />}
+        />
+
         <Route path={defaultUrl + "/inspection"} element={<Inspection />} />
         <Route
           path={defaultUrl + "/inspectionCreate"}

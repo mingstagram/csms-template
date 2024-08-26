@@ -21,6 +21,14 @@ const PartnerComponent = () => {
     setIsOpen(!isOpen);
   };
 
+  const handlePartnerDetail = () => {
+    navigate("/partnerDetail");
+  };
+
+  const handleSearch = () => {
+    //
+  };
+
   return (
     <div style={{ fontFamily: "LGSmart_H" }}>
       <div className="Setting_Component">
@@ -87,7 +95,7 @@ const PartnerComponent = () => {
                 height: "30px",
                 cursor: "pointer", // 마우스 오버 시 커서를 손가락 모양으로 변경
               }}
-              // onClick={handleSearch}
+              onClick={handleSearch}
             />
           </div>
         </div>
@@ -276,7 +284,12 @@ const PartnerComponent = () => {
                 </th>
               </tr>
               {rows.map((_, index) => (
-                <tr key={index} className="table-row">
+                <tr
+                  key={index}
+                  className="table-row"
+                  style={{ cursor: "pointer" }}
+                  onClick={handlePartnerDetail}
+                >
                   <td className="main-table">
                     <Input
                       type="checkbox"

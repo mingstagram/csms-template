@@ -158,6 +158,10 @@ const Main = () => {
     navigate("/improve");
   };
 
+  const handleSchedulePage = () => {
+    navigate("/schedule");
+  };
+
   useEffect(() => {
     getRiskDateList();
     getNoticeList();
@@ -629,7 +633,13 @@ const Main = () => {
                     {formatMonthYear(date)} 일정
                   </p>
                 </div>
-                <span className="main-sub-btn">더보기</span>
+                <span
+                  className="main-sub-btn"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleSchedulePage}
+                >
+                  더보기
+                </span>
               </div>
               <div
                 style={{

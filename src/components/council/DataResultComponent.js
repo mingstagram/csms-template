@@ -13,6 +13,10 @@ const DataResultComponent = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
+  const handleSearch = () => {
+    //
+  };
+
   return (
     <div className="d-flex" style={{ fontFamily: "LGSmart_H" }}>
       <div className="Notice_Component">
@@ -265,7 +269,7 @@ const DataResultComponent = () => {
                   height: "30px",
                   cursor: "pointer", // 마우스 오버 시 커서를 손가락 모양으로 변경
                 }}
-                // onClick={handleSearch}
+                onClick={handleSearch}
               />
             </div>
           </div>

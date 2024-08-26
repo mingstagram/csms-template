@@ -11,6 +11,10 @@ const SafetyHealthComponent = () => {
   const [endDate, setEndDate] = useState(null);
   const rows = Array.from({ length: 7 });
 
+  const handleSearch = () => {
+    //
+  };
+
   return (
     <div style={{ fontFamily: "LGSmart_H" }}>
       <div className="Setting_Component">
@@ -132,7 +136,7 @@ const SafetyHealthComponent = () => {
                   height: "30px",
                   cursor: "pointer", // 마우스 오버 시 커서를 손가락 모양으로 변경
                 }}
-                // onClick={handleSearch}
+                onClick={handleSearch}
               />
             </div>
           </div>

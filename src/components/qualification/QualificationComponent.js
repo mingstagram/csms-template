@@ -8,6 +8,11 @@ const QualificationComponent = () => {
   const navigate = useNavigate();
   const rows1 = Array.from({ length: 8 });
   const rows2 = Array.from({ length: 10 });
+
+  const handleSearch = () => {
+    //
+  };
+
   return (
     <div className="d-flex" style={{ fontFamily: "LGSmart_H" }}>
       <div className="Qualification_Component1">
@@ -176,7 +181,7 @@ const QualificationComponent = () => {
                 height: "30px",
                 cursor: "pointer", // 마우스 오버 시 커서를 손가락 모양으로 변경
               }}
-              // onClick={handleSearch}
+              onClick={handleSearch}
             />
           </div>
         </div>

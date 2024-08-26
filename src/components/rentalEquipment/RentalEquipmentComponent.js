@@ -20,6 +20,10 @@ const RentalEquipmentComponent = () => {
     setIsModalOpen(false);
   };
 
+  const handleSearch = () => {
+    //
+  };
+
   const rentalEquipmentData = [
     { category: "Rental 1", value: 30 },
     { category: "Rental 2", value: 40 },
@@ -118,7 +122,7 @@ const RentalEquipmentComponent = () => {
                   height: "30px",
                   cursor: "pointer", // 마우스 오버 시 커서를 손가락 모양으로 변경
                 }}
-                // onClick={handleSearch}
+                onClick={handleSearch}
               />
             </div>
           </div>
