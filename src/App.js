@@ -132,11 +132,11 @@ function App() {
           element={<QualificationCreate />}
         />
         <Route
-          path={defaultUrl + "/safetyHealthMng"}
+          path={defaultUrl + "/shManageBuild"}
           element={<SafetyHealthMng />}
         />
         <Route
-          path={defaultUrl + "/safetyHealthMngCreate"}
+          path={defaultUrl + "/shManageBuildCreate"}
           element={<SafetyHealthMngCreate />}
         />
 

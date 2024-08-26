@@ -602,14 +602,13 @@
   padding: 0px 0px 0px 0px;
   background-color: #fff;
 }
-
 .menu-item {
   height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #ddd; /* 각 메뉴 사이에 구분선을 추가 */
+  border-bottom: 1px solid #ddd;
   cursor: pointer;
   font-size: 12px;
   font-family: LGSmart_H;
@@ -618,16 +617,17 @@
 .menu-icon {
   width: 28px;
   height: 28px;
-  margin-bottom: 8px; /* 텍스트와 아이콘 사이의 간격 */
+  margin-bottom: 8px;
 }
 
-.menu-item:hover {
+.menu-item:hover,
+.menu-item.expanded {
   background-color: #fff0f0cc;
   border-left: #e23465 solid 2px;
 }
 
 .submenu {
-  background-color: #fff0f0cc; /* 하위 메뉴 배경색은 hover 시의 배경색과 동일 */
+  background-color: #fff0f0cc;
   display: flex;
   flex-direction: column;
   padding-left: 0px;
@@ -639,12 +639,13 @@
   height: 34px;
   display: flex;
   align-items: center;
-  justify-content: center; /* 텍스트를 수평 가운데 정렬 */
-  text-align: center; /* 텍스트를 중앙 정렬 */
+  justify-content: center;
+  text-align: center;
   cursor: pointer;
 }
 
-.submenu-item:hover {
+.submenu-item:hover,
+.submenu-item.active {
   background-color: #f6e2e2;
 }
 
