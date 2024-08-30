@@ -8,7 +8,7 @@ import DatePickerCustom from "../common/DatePickerCustom";
 import { useNavigate } from "react-router-dom";
 import CommentItem from "../common/CommentItem";
 
-const DataResultComponent = () => {
+const ShSystemImproveComponent = () => {
   const rows = Array.from({ length: 15 });
   const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
@@ -72,12 +72,114 @@ const DataResultComponent = () => {
       <div className="Notice_Component">
         <div className="d-flex">
           <div className="Rectangle-346"></div>
-          <p className="main-sub-title">협의체</p>
+          <p className="main-sub-title">안전보건관리체계 구축</p>
         </div>
         <div className="d-flex" style={{ paddingTop: "10px" }}>
           <Button
             style={{
-              width: "140px",
+              width: "160px",
+              height: "34px",
+              borderRadius: "500px",
+              paddingTop: "4px",
+              border: "solid 1px #d9d9d9",
+              backgroundColor: "white",
+              marginRight: "10px",
+            }}
+            onClick={() => {
+              navigate("/shLeadership");
+            }}
+          >
+            <span
+              style={{ fontSize: "12px", fontWeight: "bold", color: "#666" }}
+            >
+              경영자의 안전보건 리더십
+            </span>
+          </Button>
+          <Button
+            style={{
+              width: "160px",
+              height: "34px",
+              borderRadius: "500px",
+              paddingTop: "4px",
+              border: "solid 1px #d9d9d9",
+              backgroundColor: "white",
+              marginRight: "10px",
+            }}
+            onClick={() => {
+              navigate("/workerParticipation");
+            }}
+          >
+            <span
+              style={{ fontSize: "14px", fontWeight: "bold", color: "#666" }}
+            >
+              근로자의 참여
+            </span>
+          </Button>
+          <Button
+            style={{
+              width: "160px",
+              height: "34px",
+              borderRadius: "500px",
+              paddingTop: "4px",
+              border: "solid 1px #d9d9d9",
+              backgroundColor: "white",
+              marginRight: "10px",
+            }}
+            onClick={() => {
+              navigate("/hazardManagement");
+            }}
+          >
+            <span
+              style={{ fontSize: "12px", fontWeight: "bold", color: "#666" }}
+            >
+              위험요인 제거·대체 및 통제
+            </span>
+          </Button>
+          <Button
+            style={{
+              width: "160px",
+              height: "34px",
+              borderRadius: "500px",
+              paddingTop: "4px",
+              border: "solid 1px #d9d9d9",
+              backgroundColor: "white",
+              marginRight: "10px",
+            }}
+            onClick={() => {
+              navigate("/emergencyPlan");
+            }}
+          >
+            <span
+              style={{ fontSize: "14px", fontWeight: "bold", color: "#666" }}
+            >
+              비상조치계획
+            </span>
+          </Button>
+        </div>
+        <div className="d-flex" style={{ paddingTop: "10px" }}>
+          <Button
+            style={{
+              width: "160px",
+              height: "34px",
+              borderRadius: "500px",
+              paddingTop: "4px",
+              border: "solid 1px #d9d9d9",
+              backgroundColor: "white",
+              marginRight: "10px",
+            }}
+            onClick={() => {
+              navigate("/contractorSh");
+            }}
+          >
+            <span
+              style={{ fontSize: "10px", fontWeight: "bold", color: "#666" }}
+            >
+              도급·용역·위탁시 안전보건 확보
+            </span>
+          </Button>
+          <Button
+            style={{
+              width: "160px",
               height: "34px",
               borderRadius: "500px",
               backgroundColor: "#29282d",
@@ -85,34 +187,28 @@ const DataResultComponent = () => {
               marginRight: "10px",
             }}
             onClick={() => {
-              navigate("/dataResult");
+              navigate("/shSystemImprove");
             }}
           >
-            <span style={{ fontSize: "12px", fontWeight: "bold" }}>
-              협의체 자료 · 결과
-            </span>
-          </Button>
-          <Button
-            style={{
-              width: "140px",
-              height: "34px",
-              borderRadius: "500px",
-              paddingTop: "4px",
-              border: "solid 1px #d9d9d9",
-              backgroundColor: "white",
-            }}
-            onClick={() => {
-              navigate("/improve");
-            }}
-          >
-            <span
-              style={{ fontSize: "12px", fontWeight: "bold", color: "#666" }}
-            >
-              개선제안 · 아차사고
+            <span style={{ fontSize: "10px", fontWeight: "bold" }}>
+              안전보건관리체계 평가 및 개선
             </span>
           </Button>
         </div>
         <div className="d-flex justify-content-end">
+          <Button
+            style={{
+              width: "130px",
+              height: "30px",
+              backgroundColor: "#edeef2",
+              border: "1px solid white",
+              color: "black",
+              fontSize: "12px",
+              marginRight: "5px",
+            }}
+          >
+            샘플파일 다운로드
+          </Button>
           <Button
             style={{
               width: "100px",
@@ -124,7 +220,7 @@ const DataResultComponent = () => {
               marginRight: "5px",
             }}
             onClick={() => {
-              navigate("/dataResultWrite");
+              navigate("/shSystemImproveCreate");
             }}
           >
             등록
@@ -134,7 +230,7 @@ const DataResultComponent = () => {
         <div
           style={{
             width: "810px",
-            height: "640px",
+            height: "600px",
             overflow: "hidden",
             paddingTop: "10px",
           }}
@@ -538,4 +634,4 @@ const DataResultComponent = () => {
   );
 };
 
-export default DataResultComponent;
+export default ShSystemImproveComponent;

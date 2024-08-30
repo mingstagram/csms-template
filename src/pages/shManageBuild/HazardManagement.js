@@ -2,9 +2,9 @@ import React from "react";
 import Header from "../../layouts/Header";
 import LeftHeader from "../../layouts/LeftHeader";
 import styled from "styled-components";
-import SafetyHealthMngCreateComponent from "../../components/safetyHealthMng/SafetyHealthMngCreateComponent";
+import HazardManagementComponent from "../../components/shManageBuild/HazardManagementComponent";
 
-const SafetyHealthMngCreate = () => {
+const HazardManagement = () => {
   return (
     <div>
       <Header />
@@ -14,7 +14,7 @@ const SafetyHealthMngCreate = () => {
         </Left>
         <Frame>
           <Center>
-            <SafetyHealthMngCreateComponent />
+            <HazardManagementComponent />
           </Center>
         </Frame>
       </div>
@@ -22,7 +22,7 @@ const SafetyHealthMngCreate = () => {
   );
 };
 
-export default SafetyHealthMngCreate;
+export default HazardManagement;
 
 const Frame = styled.div`
   display: flex;

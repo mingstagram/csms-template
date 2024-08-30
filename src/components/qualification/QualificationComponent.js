@@ -1,13 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import searchBtn from "../../assets/images/Component 110.png";
 import component210 from "../../assets/images/component-210.png";
 import { useNavigate } from "react-router-dom";
 import { Button, Input } from "reactstrap";
+import CommentItem from "../common/CommentItem";
 
 const QualificationComponent = () => {
   const navigate = useNavigate();
-  const rows1 = Array.from({ length: 8 });
+  const rows1 = Array.from({ length: 15 });
   const rows2 = Array.from({ length: 10 });
+
+  // 초기 댓글 데이터 배열 설정
+  const [comments, setComments] = useState(
+    Array.from({ length: 3 }, (_, index) => ({
+      author: `작성자 ${index + 1}`,
+      date: `2024.08.12 15:0${index + 1}`,
+      content: `댓글 내용 ${
+        index + 1
+      }: 오늘 발생한 작업장 사고에 대해 자세한 상황을 공유해 주실 수 있나요? 안전 조치가 제대로 이행되었는지 확인이 필요합니다.`,
+    }))
+  );
+
+  // 입력된 댓글 내용
+  const [newComment, setNewComment] = useState("");
+
+  // 댓글 추가 핸들러
+  const handleAddComment = () => {
+    if (newComment.trim() !== "") {
+      // 댓글 추가
+      setComments([
+        ...comments,
+        {
+          author: `작성자 ${comments.length + 1}`,
+          date: new Date()
+            .toISOString()
+            .slice(0, 16)
+            .replace("T", " ")
+            .slice(0, 16),
+          content: newComment,
+        },
+      ]);
+      // 입력 필드 초기화
+      setNewComment("");
+    }
+  };
+
+  // 댓글 삭제 핸들러
+  const handleDeleteComment = (index) => {
+    setComments(comments.filter((_, i) => i !== index));
+  };
+
+  // 키 다운 핸들러
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // 기본 동작 방지 (예: 폼 제출 등)
+      handleAddComment(); // 댓글 추가
+    }
+  };
 
   const handleSearch = () => {
     //
@@ -44,7 +93,7 @@ const QualificationComponent = () => {
         </div>
         <div
           style={{
-            height: "40vh",
+            height: "70vh",
             paddingTop: "10px",
           }}
         >
@@ -314,46 +363,54 @@ const QualificationComponent = () => {
               </button>
             </div>
           </div>
-          <div style={{ paddingTop: "15px" }}>
-            <Button
-              style={{
-                width: "70px",
-                height: "30px",
-                backgroundColor: "#edeef2",
-                borderColor: "white",
-                color: "black",
-                fontSize: "12px",
-                marginRight: "10px",
-              }}
-            >
-              수정
-            </Button>
-            <Button
-              style={{
-                width: "70px",
-                height: "30px",
-                backgroundColor: "#edeef2",
-                borderColor: "white",
-                color: "black",
-                fontSize: "12px",
-              }}
-            >
-              삭제
-            </Button>
-          </div>
         </div>
-        <div className="Rectangle-894">
+        <div className="d-flex justify-content-end">
+          <Button
+            style={{
+              width: "70px",
+              height: "30px",
+              backgroundColor: "#edeef2",
+              borderColor: "white",
+              color: "black",
+              fontSize: "12px",
+              marginRight: "5px",
+            }}
+          >
+            수정
+          </Button>
+          <Button
+            style={{
+              width: "70px",
+              height: "30px",
+              backgroundColor: "#edeef2",
+              borderColor: "white",
+              color: "black",
+              fontSize: "12px",
+            }}
+          >
+            삭제
+          </Button>
+        </div>
+        <div className="Rectangle-896">
           <div>
             <Input
               type="text"
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+              onKeyDown={handleKeyDown} // 엔터 키 핸들링
               style={{ height: "45px", fontSize: "12px" }}
               placeholder="댓글을 입력해주세요."
             />
           </div>
           <div
-            className="d-flex justify-content-end"
+            className="d-flex justify-content-between"
             style={{ paddingTop: "10px" }}
           >
+            <div className="Frame-2901">
+              <span className="reply-001 ">
+                댓글 <span className="reply-002">{comments.length}</span>
+              </span>
+            </div>
             <Button
               style={{
                 width: "70px",
@@ -362,36 +419,28 @@ const QualificationComponent = () => {
                 borderColor: "white",
                 color: "white",
                 fontSize: "12px",
-                marginRight: "5px",
+                marginRight: "0px",
               }}
+              onClick={handleAddComment}
             >
               등록
             </Button>
-            <Button
-              style={{
-                width: "70px",
-                height: "30px",
-                backgroundColor: "#edeef2",
-                borderColor: "white",
-                color: "black",
-                fontSize: "12px",
-                marginRight: "5px",
-              }}
-            >
-              수정
-            </Button>
-            <Button
-              style={{
-                width: "70px",
-                height: "30px",
-                backgroundColor: "#edeef2",
-                borderColor: "white",
-                color: "black",
-                fontSize: "12px",
-              }}
-            >
-              삭제
-            </Button>
+          </div>
+          {/* 댓글 리스트 */}
+          <div className="Frame-2898">
+            {comments.length === 0 ? (
+              <p className="no-comments">댓글이 없습니다.</p>
+            ) : (
+              comments.map((comment, index) => (
+                <CommentItem
+                  key={index}
+                  author={comment.author}
+                  date={comment.date}
+                  content={comment.content}
+                  onDelete={() => handleDeleteComment(index)}
+                />
+              ))
+            )}
           </div>
         </div>
       </div>

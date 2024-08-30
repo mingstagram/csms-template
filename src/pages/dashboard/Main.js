@@ -190,547 +190,11 @@ const Main = () => {
   return (
     <div style={{ fontFamily: "LGSmart_H" }}>
       <div
-        style={{ display: "flex", flexDirection: "row", marginLeft: "-15px" }}
-      >
-        {/* 첫 번째 그룹의 Row */}
-        <Row style={{ marginRight: "0px", marginLeft: "-20px" }}>
-          <Col>
-            <div
-              style={{
-                width: "590px",
-                height: "250px",
-                backgroundColor: "#fff",
-                padding: "30px",
-                marginBottom: "10px",
-              }}
-            >
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex">
-                  <div className="Rectangle-346"></div>
-                  <p className="main-sub-title">공지사항</p>
-                </div>
-                <span
-                  className="main-sub-btn"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleAnnouncePage}
-                >
-                  더보기
-                </span>
-              </div>
-              {/* 테이블 추가 */}
-              <div
-                style={{
-                  width: "530px",
-                  height: "150px",
-                  marginTop: "10px",
-                  overflow: "hidden",
-                }}
-              >
-                <table
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderCollapse: "collapse",
-                  }}
-                >
-                  <tbody>
-                    <tr>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "20%" }}
-                      >
-                        분류
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "50%" }}
-                      >
-                        제목
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        등록일
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        수정일
-                      </th>
-                    </tr>
-                    {rows1.map((_, index) => (
-                      <tr>
-                        <td className="main-table main-table-row1">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
-                              <span className="N">N</span>
-                            </div>
-                            <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
-                            >
-                              asdf
-                            </span>
-                          </div>
-                        </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              {/* 테이블 종료 */}
-            </div>
-          </Col>
-          <Col>
-            <div
-              style={{
-                width: "590px",
-                height: "250px",
-                backgroundColor: "#fff",
-                padding: "30px",
-              }}
-            >
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex">
-                  <div className="Rectangle-346"></div>
-                  <p className="main-sub-title">협의체 자료 · 결과</p>
-                </div>
-                <span
-                  className="main-sub-btn"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleDataResultPage}
-                >
-                  더보기
-                </span>
-              </div>
-              <div
-                style={{
-                  width: "530px",
-                  height: "150px",
-                  marginTop: "10px",
-                  overflow: "hidden",
-                }}
-              >
-                <table
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderCollapse: "collapse",
-                  }}
-                >
-                  <tbody>
-                    <tr>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "20%" }}
-                      >
-                        업체명
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "50%" }}
-                      >
-                        제목
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        등록일
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        수정일
-                      </th>
-                    </tr>
-                    {rows1.map((_, index) => (
-                      <tr>
-                        <td className="main-table">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
-                              <span className="N">N</span>
-                            </div>
-                            <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
-                            >
-                              asdf
-                            </span>
-                          </div>
-                        </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </Col>
-        </Row>
-
-        {/* 두 번째 그룹의 Row */}
-        <Row style={{ marginRight: "0px", marginLeft: "-30px" }}>
-          <Col>
-            <div
-              style={{
-                width: "590px",
-                height: "250px",
-                backgroundColor: "#fff",
-                padding: "30px",
-                marginBottom: "10px",
-              }}
-            >
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex">
-                  <div className="Rectangle-346"></div>
-                  <p className="main-sub-title">게시판</p>
-                </div>
-                <span
-                  className="main-sub-btn"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleNoticePage}
-                >
-                  더보기
-                </span>
-              </div>
-              <div
-                style={{
-                  width: "530px",
-                  height: "150px",
-                  marginTop: "10px",
-                  overflow: "hidden",
-                }}
-              >
-                <table
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderCollapse: "collapse",
-                  }}
-                >
-                  <tbody>
-                    <tr>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "20%" }}
-                      >
-                        분류
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "50%" }}
-                      >
-                        제목
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        등록일
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        수정일
-                      </th>
-                    </tr>
-                    {rows1.map((_, index) => (
-                      <tr>
-                        <td className="main-table main-table-row1">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
-                              <span className="N">N</span>
-                            </div>
-                            <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
-                            >
-                              asdf
-                            </span>
-                          </div>
-                        </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </Col>
-          <Col>
-            <div
-              style={{
-                width: "590px",
-                height: "250px",
-                backgroundColor: "#fff",
-                padding: "30px",
-              }}
-            >
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex">
-                  <div className="Rectangle-346"></div>
-                  <p className="main-sub-title">개선제안 · 아차사고</p>
-                </div>
-                <span
-                  className="main-sub-btn"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleImprovePage}
-                >
-                  더보기
-                </span>
-              </div>
-              <div
-                style={{
-                  width: "530px",
-                  height: "150px",
-                  marginTop: "10px",
-                  overflow: "hidden",
-                }}
-              >
-                <table
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderCollapse: "collapse",
-                  }}
-                >
-                  <tbody>
-                    <tr>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "20%" }}
-                      >
-                        업체명
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "50%" }}
-                      >
-                        제목
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        등록일
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        수정일
-                      </th>
-                    </tr>
-                    {rows1.map((_, index) => (
-                      <tr>
-                        <td className="main-table">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
-                              <span className="N">N</span>
-                            </div>
-                            <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
-                            >
-                              asdf
-                            </span>
-                          </div>
-                        </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </Col>
-        </Row>
-
-        {/* 세 번째 그룹의 Row */}
-        <Row style={{ marginRight: "0px", marginLeft: "-30px" }}>
-          <Col>
-            <div
-              style={{
-                width: "590px",
-                height: "510px",
-                backgroundColor: "#fff",
-                padding: "30px",
-              }}
-            >
-              <div className="d-flex">
-                <div className="Rectangle-346"></div>
-                <p className="main-sub-title">캘린더(일정)</p>
-              </div>
-              <div className="calendar-container">
-                <div className="calendar-header">
-                  <button
-                    className="nav-btn calendar-font"
-                    onClick={handlePrevMonth}
-                  >
-                    <img src={leftArrow} />
-                  </button>
-                  <span
-                    className="calendar-title calendar-font"
-                    style={{ padding: "10px 0px 10px 0px" }}
-                  >
-                    {formatMonthYear(date)}
-                  </span>
-                  <button
-                    className="nav-btn calendar-font"
-                    onClick={handleNextMonth}
-                  >
-                    <img src={rightArrow} />
-                  </button>
-                </div>
-                <Calendar
-                  onChange={handleDateChange}
-                  value={date}
-                  showNavigation={false}
-                  showNeighboringMonth={true} // 이전/다음 월의 날짜도 보여줍니다.
-                  formatShortWeekday={(locale, date) => {
-                    const days = ["일", "월", "화", "수", "목", "금", "토"];
-                    return days[date.getDay()];
-                  }} // 요일 순서 커스터마이징
-                  tileClassName={({ date, view }) => {
-                    if (view === "month") {
-                      const today = new Date();
-                      const isBeforeCurrentMonth =
-                        date.getMonth() < today.getMonth() &&
-                        date.getFullYear() === today.getFullYear();
-                      const isAfterCurrentMonth =
-                        date.getMonth() > today.getMonth() &&
-                        date.getFullYear() === today.getFullYear();
-
-                      if (isBeforeCurrentMonth || isAfterCurrentMonth) {
-                        return "other-month-tile"; // 이전/다음 월의 날짜는 회색
-                      }
-                    }
-                    return null;
-                  }}
-                  formatDay={(locale, date) => date.getDate()} // 요일 텍스트 설정
-                />
-              </div>
-              <div
-                className="d-flex justify-content-between align-items-center"
-                style={{ paddingTop: "20px" }}
-              >
-                <div className="d-flex">
-                  <img
-                    src={Variant5}
-                    style={{ width: "16px", height: "16px" }}
-                  />
-                  <p className="main-sub-title2">
-                    {formatMonthYear(date)} 일정
-                  </p>
-                </div>
-                <span
-                  className="main-sub-btn"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleSchedulePage}
-                >
-                  더보기
-                </span>
-              </div>
-              <div
-                style={{
-                  width: "530px",
-                  height: "150px",
-                  marginTop: "10px",
-                  overflow: "hidden",
-                }}
-              >
-                <table
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderCollapse: "collapse",
-                  }}
-                >
-                  <tbody>
-                    <tr>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "00%" }}
-                      >
-                        분류
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "40%" }}
-                      >
-                        제목
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "10%" }}
-                      >
-                        기간
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "15%" }}
-                      >
-                        일시
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "10%" }}
-                      >
-                        대상
-                      </th>
-                      <th
-                        className="main-table main-table-title"
-                        style={{ width: "10%" }}
-                      >
-                        장소
-                      </th>
-                    </tr>
-                    {rows1.map((_, index) => (
-                      <tr>
-                        <td className="main-table">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
-                              <span className="N">N</span>
-                            </div>
-                            <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
-                            >
-                              asdf
-                            </span>
-                          </div>
-                        </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </div>
-
-      {/* 새로운 줄에서 시작하는 네 번째 그룹의 Row */}
-      <div
         style={{
           display: "flex",
           flexDirection: "row",
-          marginTop: "10px",
           marginLeft: "-15px",
+          marginBottom: "10px",
         }}
       >
         <Row style={{ marginRight: "0px", marginLeft: "-20px" }}>
@@ -867,6 +331,540 @@ const Main = () => {
                     <DashboardBarChart chartData={improveDisasterTypeData} />
                   </div>
                 </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </div>
+      <div
+        style={{ display: "flex", flexDirection: "row", marginLeft: "-15px" }}
+      >
+        {/* 첫 번째 그룹의 Row */}
+        <Row style={{ marginRight: "0px", marginLeft: "-20px" }}>
+          <Col>
+            <div
+              style={{
+                width: "590px",
+                height: "250px",
+                backgroundColor: "#fff",
+                padding: "30px",
+                marginBottom: "10px",
+              }}
+            >
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex">
+                  <div className="Rectangle-346"></div>
+                  <p className="main-sub-title">공지사항</p>
+                </div>
+                <span
+                  className="main-sub-btn"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleAnnouncePage}
+                >
+                  더보기
+                </span>
+              </div>
+              {/* 테이블 추가 */}
+              <div
+                style={{
+                  width: "530px",
+                  height: "150px",
+                  marginTop: "10px",
+                  overflow: "hidden",
+                }}
+              >
+                <table
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderCollapse: "collapse",
+                  }}
+                >
+                  <tbody>
+                    <tr>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "20%" }}
+                      >
+                        분류
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "50%" }}
+                      >
+                        제목
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        등록일
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        수정일
+                      </th>
+                    </tr>
+                    {rows1.map((_, index) => (
+                      <tr key={index} className="table-row">
+                        <td className="main-table main-table-row1">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
+                          </div>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {/* 테이블 종료 */}
+            </div>
+          </Col>
+          <Col>
+            <div
+              style={{
+                width: "590px",
+                height: "250px",
+                backgroundColor: "#fff",
+                padding: "30px",
+              }}
+            >
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex">
+                  <div className="Rectangle-346"></div>
+                  <p className="main-sub-title">협의체 자료 · 결과</p>
+                </div>
+                <span
+                  className="main-sub-btn"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleDataResultPage}
+                >
+                  더보기
+                </span>
+              </div>
+              <div
+                style={{
+                  width: "530px",
+                  height: "150px",
+                  marginTop: "10px",
+                  overflow: "hidden",
+                }}
+              >
+                <table
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderCollapse: "collapse",
+                  }}
+                >
+                  <tbody>
+                    <tr>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "20%" }}
+                      >
+                        업체명
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "50%" }}
+                      >
+                        제목
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        등록일
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        수정일
+                      </th>
+                    </tr>
+                    {rows1.map((_, index) => (
+                      <tr key={index} className="table-row">
+                        <td className="main-table">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
+                          </div>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </Col>
+        </Row>
+
+        {/* 두 번째 그룹의 Row */}
+        <Row style={{ marginRight: "0px", marginLeft: "-30px" }}>
+          <Col>
+            <div
+              style={{
+                width: "590px",
+                height: "250px",
+                backgroundColor: "#fff",
+                padding: "30px",
+                marginBottom: "10px",
+              }}
+            >
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex">
+                  <div className="Rectangle-346"></div>
+                  <p className="main-sub-title">게시판</p>
+                </div>
+                <span
+                  className="main-sub-btn"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleNoticePage}
+                >
+                  더보기
+                </span>
+              </div>
+              <div
+                style={{
+                  width: "530px",
+                  height: "150px",
+                  marginTop: "10px",
+                  overflow: "hidden",
+                }}
+              >
+                <table
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderCollapse: "collapse",
+                  }}
+                >
+                  <tbody>
+                    <tr>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "20%" }}
+                      >
+                        분류
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "50%" }}
+                      >
+                        제목
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        등록일
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        수정일
+                      </th>
+                    </tr>
+                    {rows1.map((_, index) => (
+                      <tr key={index} className="table-row">
+                        <td className="main-table main-table-row1">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
+                          </div>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </Col>
+          <Col>
+            <div
+              style={{
+                width: "590px",
+                height: "250px",
+                backgroundColor: "#fff",
+                padding: "30px",
+              }}
+            >
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex">
+                  <div className="Rectangle-346"></div>
+                  <p className="main-sub-title">개선제안 · 아차사고</p>
+                </div>
+                <span
+                  className="main-sub-btn"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleImprovePage}
+                >
+                  더보기
+                </span>
+              </div>
+              <div
+                style={{
+                  width: "530px",
+                  height: "150px",
+                  marginTop: "10px",
+                  overflow: "hidden",
+                }}
+              >
+                <table
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderCollapse: "collapse",
+                  }}
+                >
+                  <tbody>
+                    <tr>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "20%" }}
+                      >
+                        업체명
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "50%" }}
+                      >
+                        제목
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        등록일
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        수정일
+                      </th>
+                    </tr>
+                    {rows1.map((_, index) => (
+                      <tr key={index} className="table-row">
+                        <td className="main-table">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
+                          </div>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </Col>
+        </Row>
+
+        {/* 세 번째 그룹의 Row */}
+        <Row style={{ marginRight: "0px", marginLeft: "-30px" }}>
+          <Col>
+            <div
+              style={{
+                width: "590px",
+                height: "510px",
+                backgroundColor: "#fff",
+                padding: "30px",
+              }}
+            >
+              <div className="d-flex">
+                <div className="Rectangle-346"></div>
+                <p className="main-sub-title">캘린더(일정)</p>
+              </div>
+              <div className="calendar-container">
+                <div className="calendar-header">
+                  <button
+                    className="nav-btn calendar-font"
+                    onClick={handlePrevMonth}
+                  >
+                    <img src={leftArrow} />
+                  </button>
+                  <span
+                    className="calendar-title calendar-font"
+                    style={{ padding: "10px 0px 10px 0px" }}
+                  >
+                    {formatMonthYear(date)}
+                  </span>
+                  <button
+                    className="nav-btn calendar-font"
+                    onClick={handleNextMonth}
+                  >
+                    <img src={rightArrow} />
+                  </button>
+                </div>
+                <Calendar
+                  onChange={handleDateChange}
+                  value={date}
+                  showNavigation={false}
+                  showNeighboringMonth={true} // 이전/다음 월의 날짜도 보여줍니다.
+                  formatShortWeekday={(locale, date) => {
+                    const days = ["일", "월", "화", "수", "목", "금", "토"];
+                    return days[date.getDay()];
+                  }} // 요일 순서 커스터마이징
+                  tileClassName={({ date, view }) => {
+                    if (view === "month") {
+                      const today = new Date();
+                      const isBeforeCurrentMonth =
+                        date.getMonth() < today.getMonth() &&
+                        date.getFullYear() === today.getFullYear();
+                      const isAfterCurrentMonth =
+                        date.getMonth() > today.getMonth() &&
+                        date.getFullYear() === today.getFullYear();
+
+                      if (isBeforeCurrentMonth || isAfterCurrentMonth) {
+                        return "other-month-tile"; // 이전/다음 월의 날짜는 회색
+                      }
+                    }
+                    return null;
+                  }}
+                  formatDay={(locale, date) => date.getDate()} // 요일 텍스트 설정
+                />
+              </div>
+              <div
+                className="d-flex justify-content-between align-items-center"
+                style={{ paddingTop: "20px" }}
+              >
+                <div className="d-flex">
+                  <img
+                    src={Variant5}
+                    style={{ width: "16px", height: "16px" }}
+                  />
+                  <p className="main-sub-title2">
+                    {formatMonthYear(date)} 일정
+                  </p>
+                </div>
+                <span
+                  className="main-sub-btn"
+                  style={{ cursor: "pointer" }}
+                  // onClick={handleSchedulePage}
+                >
+                  더보기
+                </span>
+              </div>
+              <div
+                style={{
+                  width: "530px",
+                  height: "150px",
+                  marginTop: "10px",
+                  overflow: "hidden",
+                }}
+              >
+                <table
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderCollapse: "collapse",
+                  }}
+                >
+                  <tbody>
+                    <tr>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "00%" }}
+                      >
+                        분류
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "40%" }}
+                      >
+                        제목
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "10%" }}
+                      >
+                        기간
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "15%" }}
+                      >
+                        일시
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "10%" }}
+                      >
+                        대상
+                      </th>
+                      <th
+                        className="main-table main-table-title"
+                        style={{ width: "10%" }}
+                      >
+                        장소
+                      </th>
+                    </tr>
+                    {rows1.map((_, index) => (
+                      <tr>
+                        <td className="main-table">asdf</td>
+                        <td className="main-table">
+                          <div className="d-flex">
+                            <div className="Ellipse-368">
+                              <span className="N">N</span>
+                            </div>
+                            <span
+                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                            >
+                              asdf
+                            </span>
+                          </div>
+                        </td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                        <td className="main-table">asd</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </Col>

@@ -10,6 +10,19 @@ import DatePickerCustom from "../common/DatePickerCustom";
 const RegistComponent = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [selectedMain, setSelectedMain] = useState(null);
+  const [selectedRadioGroup, setSelectedRadioGroup] = useState(null);
+
+  const handleMainChange = (value) => {
+    setSelectedMain(value);
+    // 메인 구분이 변경될 때 라디오 그룹 초기화
+    setSelectedRadioGroup(null);
+  };
+
+  const handleRadioGroupChange = (value) => {
+    setSelectedRadioGroup(value);
+  };
+
   return (
     <div style={{ fontFamily: "LGSmart_H" }}>
       <div className="Write_Component">
@@ -45,32 +58,22 @@ const RegistComponent = () => {
               }}
             >
               <FormGroup>
-                <div className="d-flex" style={{ paddingBottom: "10px" }}>
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup1" /> 메인 {">"}{" "}
-                    공지사항
+                <div className="d-flex" style={{ paddingTop: "10px" }}>
+                  <span style={{ flexBasis: "30%" }}>
+                    <Input
+                      type="radio"
+                      name="radioGroup1"
+                      onChange={() => handleMainChange("notice")}
+                    />{" "}
+                    메인 {">"} 공지사항
                   </span>
-                  <span style={{ flexBasis: "40%" }}>
-                    <Input type="radio" name="radioGroup1" /> 산업안전보건법{" "}
-                    {">"} 협의체 자료 <span>&#183;</span> 결과
-                  </span>
-                  <span style={{ flexBasis: "40%" }}>
-                    <Input type="radio" name="radioGroup1" /> 중대재해처벌법{" "}
-                    {">"} 적격 수급인 선정 평가
-                  </span>
-                </div>
-                <div className="d-flex">
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup1" /> 메인 {">"} 게시판
-                  </span>
-                  <span style={{ flexBasis: "40%" }}>
-                    <Input type="radio" name="radioGroup1" />
-                    산업안전보건법 {">"} 개선제안
-                    <span>&#183;</span> 아차사고
-                  </span>
-                  <span style={{ flexBasis: "40%" }}>
-                    <Input type="radio" name="radioGroup1" /> 중대재해처벌법{" "}
-                    {">"} 안전보건관리체계 구축
+                  <span style={{ flexBasis: "30%" }}>
+                    <Input
+                      type="radio"
+                      name="radioGroup1"
+                      onChange={() => handleMainChange("board")}
+                    />{" "}
+                    메인 {">"} 게시판
                   </span>
                 </div>
               </FormGroup>
@@ -80,7 +83,7 @@ const RegistComponent = () => {
             className="d-flex"
             style={{
               paddingTop: "18px",
-              height: "109px",
+              height: "104px",
               borderBottom: "1px solid #d9d9d9",
             }}
           >
@@ -102,48 +105,121 @@ const RegistComponent = () => {
               }}
             >
               <FormGroup>
-                <div className="d-flex" style={{ paddingBottom: "20px" }}>
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 요청
-                  </span>
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 점검
-                  </span>
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 협의체
-                  </span>
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 교육
-                  </span>
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 해당사항 없음
-                  </span>
-                </div>
-                <div className="d-flex">
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 공모전
-                  </span>
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 지침
-                  </span>
-                  <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 안내
-                  </span>
-                  <span style={{ flexBasis: "40%", display: "flex" }}>
-                    <Input type="radio" name="radioGroup" />{" "}
-                    <Input
-                      type="text"
-                      placeholder="직접입력"
-                      style={{
-                        height: "30px",
-                        width: "180px",
-                        marginLeft: "10px",
-                        fontSize: "12px",
-                        marginTop: "-7px",
-                      }}
-                    />
-                  </span>
-                </div>
+                {/* 공지사항이 선택된 경우 */}
+                {selectedMain === "notice" && (
+                  <div>
+                    <div className="d-flex" style={{ paddingTop: "12px" }}>
+                      <span style={{ flexBasis: "20%" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "contest"}
+                          onChange={() => handleRadioGroupChange("contest")}
+                        />{" "}
+                        공모전
+                      </span>
+                      <span style={{ flexBasis: "20%" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "guideline"}
+                          onChange={() => handleRadioGroupChange("guideline")}
+                        />{" "}
+                        지침
+                      </span>
+                      <span style={{ flexBasis: "20%" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "information"}
+                          onChange={() => handleRadioGroupChange("information")}
+                        />{" "}
+                        안내
+                      </span>
+                      <span style={{ flexBasis: "40%", display: "flex" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "custom"}
+                          onChange={() => handleRadioGroupChange("custom")}
+                        />{" "}
+                        <Input
+                          type="text"
+                          placeholder="직접입력"
+                          style={{
+                            height: "30px",
+                            width: "180px",
+                            marginLeft: "10px",
+                            fontSize: "12px",
+                            marginTop: "-7px",
+                          }}
+                        />
+                      </span>
+                    </div>
+                  </div>
+                )}
+                {/* 게시판이 선택된 경우 */}
+                {selectedMain === "board" && (
+                  <div>
+                    <div className="d-flex" style={{ paddingTop: "12px" }}>
+                      <span style={{ flexBasis: "20%" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "request"}
+                          onChange={() => handleRadioGroupChange("request")}
+                        />{" "}
+                        요청
+                      </span>
+                      <span style={{ flexBasis: "20%" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "inspection"}
+                          onChange={() => handleRadioGroupChange("inspection")}
+                        />{" "}
+                        점검
+                      </span>
+                      <span style={{ flexBasis: "20%" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "committee"}
+                          onChange={() => handleRadioGroupChange("committee")}
+                        />{" "}
+                        협의체
+                      </span>
+                      <span style={{ flexBasis: "20%" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "education"}
+                          onChange={() => handleRadioGroupChange("education")}
+                        />{" "}
+                        교육
+                      </span>
+                      <span style={{ flexBasis: "40%", display: "flex" }}>
+                        <Input
+                          type="radio"
+                          name="radioGroup"
+                          checked={selectedRadioGroup === "custom"}
+                          onChange={() => handleRadioGroupChange("custom")}
+                        />{" "}
+                        <Input
+                          type="text"
+                          placeholder="직접입력"
+                          style={{
+                            height: "30px",
+                            width: "180px",
+                            marginLeft: "10px",
+                            fontSize: "12px",
+                            marginTop: "-7px",
+                          }}
+                        />
+                      </span>
+                    </div>
+                  </div>
+                )}
               </FormGroup>
             </div>
           </div>

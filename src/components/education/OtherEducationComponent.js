@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import attachFile from "../../assets/images/attach_file.png";
 import component179 from "../../assets/images/Component-179.png";
-import component180 from "../../assets/images/Component-180.png";
+import searchBtn from "../../assets/images/Component 110.png";
 import { Button, Input } from "reactstrap";
+import DatePicker from "react-datepicker";
+import DatePickerCustom from "../common/DatePickerCustom";
+import { useNavigate } from "react-router-dom";
 import CommentItem from "../common/CommentItem";
 
-const AnnounceComponent = () => {
+const OtherEducationComponent = () => {
   const rows = Array.from({ length: 15 });
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const handleClick = () => {
-    setIsExpanded((prevState) => !prevState);
-  };
+  const navigate = useNavigate();
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   // 초기 댓글 데이터 배열 설정
   const [comments, setComments] = useState(
@@ -64,125 +66,206 @@ const AnnounceComponent = () => {
   const handleSearch = () => {
     //
   };
+
   return (
     <div className="d-flex" style={{ fontFamily: "LGSmart_H" }}>
-      {!isExpanded && (
-        <div className="Notice_Component">
-          <div className="d-flex">
-            <div className="Rectangle-346"></div>
-            <p className="main-sub-title">공지사항</p>
-          </div>
-          {/* 테이블 추가 */}
-          <div
+      <div className="Notice_Component">
+        <div className="d-flex">
+          <div className="Rectangle-346"></div>
+          <p className="main-sub-title">교육자료</p>
+        </div>
+        <div className="d-flex" style={{ paddingTop: "10px" }}>
+          <Button
             style={{
-              width: "810px",
-              height: "710px",
-              overflow: "hidden",
-              paddingTop: "10px",
+              width: "140px",
+              height: "34px",
+              borderRadius: "500px",
+              paddingTop: "4px",
+              border: "solid 1px #d9d9d9",
+              backgroundColor: "white",
+              marginRight: "10px",
+            }}
+            onClick={() => {
+              navigate("/regularEducation");
             }}
           >
-            <table
-              style={{
-                width: "100%",
-                height: "100%",
-                borderCollapse: "collapse",
-              }}
+            <span
+              style={{ fontSize: "12px", fontWeight: "bold", color: "#666" }}
             >
-              <tbody>
-                <tr>
-                  <th
-                    className="notice-table notice-table-title"
-                    style={{ width: "15%" }}
-                  >
-                    분류
-                  </th>
-                  <th
-                    className="main-table main-table-title"
-                    style={{ width: "65%" }}
-                  >
-                    제목
-                  </th>
-                  <th
-                    className="main-table main-table-title"
-                    style={{ width: "10%" }}
-                  >
-                    등록일
-                  </th>
-                  <th
-                    className="main-table main-table-title"
-                    style={{ width: "10%" }}
-                  >
-                    수정일
-                  </th>
-                </tr>
-                {rows.map((_, index) => (
-                  <tr key={index} className="table-row">
-                    <td className="main-table main-table-row1">요청</td>
-                    <td className="main-table">
-                      <div className="d-flex">
-                        <div className="Ellipse-370">
-                          <span className="N">N</span>
-                        </div>
-                        <span style={{ fontSize: "12px", marginLeft: "7px" }}>
-                          평택 LG전자 화면 설계서 가이드 입니다.
-                        </span>
-                      </div>
-                    </td>
-                    <td className="main-table">asd</td>
-                    <td className="main-table">asd</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div
+              정기안전보건교육
+            </span>
+          </Button>
+          <Button
             style={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              fontSize: "13px",
-              height: "40px",
-              paddingTop: "10px",
+              width: "140px",
+              height: "34px",
+              borderRadius: "500px",
+              paddingTop: "4px",
+              border: "solid 1px #d9d9d9",
+              backgroundColor: "white",
+              marginRight: "10px",
+            }}
+            onClick={() => {
+              navigate("/specialEducation");
             }}
           >
-            <div className="pageFooter">
-              {/* {pageInfo.currentPage}페이지 {pageInfo.firstPage}-{pageInfo.lastPage}{" "} */}
-              1페이지 1-15 &nbsp;&nbsp;
-            </div>
-            <div style={{ marginRight: "auto" }}>
-              <button
-                className="Rectangle-331"
-                style={{ paddingTop: "2px" }}
-                //   onClick={() => {
-                //     paginationData.setPage(filter.pageNum - 1);
-                //   }}
-                //   disabled={
-                //     arr.slice(firstNum - 1, lastNum).length === 0 ||
-                //     filter.pageNum === 1
-                //   }
-                outline
-              >
-                <b>{"<"}</b>
-              </button>
-              &nbsp;
-              <button
-                className="Rectangle-332"
-                style={{ paddingTop: "2px" }}
-                //   onClick={() => {
-                //     paginationData.setPage(filter.pageNum + 1);
-                //   }}
-                //   disabled={
-                //     arr.slice(firstNum - 1, lastNum).length === 0 ||
-                //     filter.pageNum === numPages
-                //   }
-                outline
-              >
-                <b>&gt;</b>
-              </button>
-            </div>
+            <span
+              style={{ fontSize: "12px", fontWeight: "bold", color: "#666" }}
+            >
+              특별안전보건교육
+            </span>
+          </Button>
+          <Button
+            style={{
+              width: "140px",
+              height: "34px",
+              borderRadius: "500px",
+              backgroundColor: "#29282d",
+              paddingTop: "4px",
+              marginRight: "10px",
+            }}
+            onClick={() => {
+              navigate("/otherEducation");
+            }}
+          >
+            <span style={{ fontSize: "12px", fontWeight: "bold" }}>
+              기타안전보건교육
+            </span>
+          </Button>
+        </div>
+        <div className="d-flex justify-content-end">
+          <Button
+            style={{
+              width: "100px",
+              height: "30px",
+              backgroundColor: "#e23465",
+              borderColor: "white",
+              color: "white",
+              fontSize: "12px",
+              marginRight: "5px",
+            }}
+            onClick={() => {
+              navigate("/otherEducationCreate");
+            }}
+          >
+            등록
+          </Button>
+        </div>
+        {/* 테이블 추가 */}
+        <div
+          style={{
+            width: "810px",
+            height: "640px",
+            overflow: "hidden",
+            paddingTop: "10px",
+          }}
+        >
+          <table
+            style={{
+              width: "100%",
+              height: "100%",
+              borderCollapse: "collapse",
+            }}
+          >
+            <tbody>
+              <tr>
+                <th
+                  className="notice-table notice-table-title"
+                  style={{ width: "15%" }}
+                >
+                  업체명
+                </th>
+                <th
+                  className="main-table main-table-title"
+                  style={{ width: "65%" }}
+                >
+                  제목
+                </th>
+                <th
+                  className="main-table main-table-title"
+                  style={{ width: "10%" }}
+                >
+                  등록일
+                </th>
+                <th
+                  className="main-table main-table-title"
+                  style={{ width: "10%" }}
+                >
+                  수정일
+                </th>
+              </tr>
+              {rows.map((_, index) => (
+                <tr key={index} className="table-row">
+                  <td
+                    className="main-table main-table-row1"
+                    style={{ color: "black" }}
+                  >
+                    asdf
+                  </td>
+                  <td className="main-table">
+                    <div className="d-flex">
+                      <div className="Ellipse-368">
+                        <span className="N">N</span>
+                      </div>
+                      <span style={{ fontSize: "12px", marginLeft: "7px" }}>
+                        평택 LG전자 화면 설계서 가이드 입니다.
+                      </span>
+                    </div>
+                  </td>
+                  <td className="main-table">asd</td>
+                  <td className="main-table">asd</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            fontSize: "13px",
+            height: "40px",
+            paddingTop: "10px",
+          }}
+        >
+          <div className="pageFooter">
+            {/* {pageInfo.currentPage}페이지 {pageInfo.firstPage}-{pageInfo.lastPage}{" "} */}
+            1페이지 1-15 &nbsp;&nbsp;
+          </div>
+          <div style={{ marginRight: "auto" }}>
+            <button
+              className="Rectangle-331"
+              style={{ paddingTop: "2px" }}
+              //   onClick={() => {
+              //     paginationData.setPage(filter.pageNum - 1);
+              //   }}
+              //   disabled={
+              //     arr.slice(firstNum - 1, lastNum).length === 0 ||
+              //     filter.pageNum === 1
+              //   }
+              outline
+            >
+              <b>{"<"}</b>
+            </button>
+            &nbsp;
+            <button
+              className="Rectangle-332"
+              style={{ paddingTop: "2px" }}
+              //   onClick={() => {
+              //     paginationData.setPage(filter.pageNum + 1);
+              //   }}
+              //   disabled={
+              //     arr.slice(firstNum - 1, lastNum).length === 0 ||
+              //     filter.pageNum === numPages
+              //   }
+              outline
+            >
+              <b>&gt;</b>
+            </button>
           </div>
         </div>
-      )}
+      </div>
       <div
         style={{
           width: "8px",
@@ -192,19 +275,75 @@ const AnnounceComponent = () => {
           marginLeft: "3px",
         }}
       >
-        {/* <img
-          style={{ cursor: "pointer" }}
-          onClick={handleClick}
-          src={isExpanded ? component180 : component179}
-        /> */}
+        {/* <img src={component179} /> */}
       </div>
-      <div
-        className="Notice_Component2"
-        style={{
-          paddingTop: "60px",
-        }}
-      >
+      <div className="Notice_Component2" style={{ paddingTop: "60px" }}>
         <div>
+          <div className="d-flex justify-content-end">
+            <span
+              style={{
+                fontSize: "12px",
+                color: "#444",
+              }}
+            >
+              기간
+            </span>
+            <div
+              style={{
+                height: "30px",
+                width: "130px",
+                fontSize: "12px",
+                marginTop: "-7px",
+                marginLeft: "17px",
+              }}
+            >
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                //   className="form-control custom-date-picker"
+                customInput={<DatePickerCustom />}
+                dateFormat="yyyy/MM/dd" // 원하는 형식으로 변경 가능
+              />
+            </div>
+            <span
+              style={{
+                fontSize: "12px",
+                marginLeft: "7px",
+                marginRight: "-7px",
+              }}
+            >
+              ~
+            </span>
+            <div
+              style={{
+                height: "30px",
+                width: "130px",
+                fontSize: "12px",
+                marginTop: "-7px",
+                marginLeft: "15px",
+              }}
+            >
+              <DatePicker
+                selected={endDate}
+                onChange={(date) => setEndDate(date)}
+                //   className="form-control custom-date-picker"
+                customInput={<DatePickerCustom />}
+                dateFormat="yyyy/MM/dd" // 원하는 형식으로 변경 가능
+              />
+            </div>
+            <div style={{ margin: "-7px 0 0 7px " }}>
+              <img
+                src={searchBtn}
+                alt="Search"
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  cursor: "pointer", // 마우스 오버 시 커서를 손가락 모양으로 변경
+                }}
+                onClick={handleSearch}
+              />
+            </div>
+          </div>
           <div
             style={{
               width: "110px",
@@ -332,7 +471,7 @@ const AnnounceComponent = () => {
             </div>
           </div>
         </div>
-        <div className="Rectangle-895"> 공지사항 내용</div>
+        <div className="Rectangle-895"> 게시물 내용</div>
         <div
           className="d-flex justify-content-end"
           style={{ marginBottom: "10px" }}
@@ -420,4 +559,4 @@ const AnnounceComponent = () => {
   );
 };
 
-export default AnnounceComponent;
+export default OtherEducationComponent;

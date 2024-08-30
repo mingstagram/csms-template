@@ -21,7 +21,7 @@ const SafetyHealthComponent = () => {
         <div className="d-flex">
           <div className="Rectangle-346" style={{ marginRight: "5px" }}></div>
           <span style={{ fontSize: "16px", fontWeight: "bold" }}>
-            협동안전보건점검
+            합동안전보건점검
           </span>
         </div>
         <div

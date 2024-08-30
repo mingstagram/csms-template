@@ -20,14 +20,34 @@ import SafetyHealthCreate from "./pages/safetyHealth/SafetyHealthCreate.js";
 import RentalEquipment from "./pages/rentalEquipment/RentalEquipment.js";
 import Qualification from "./pages/qualification/Qualification.js";
 import QualificationCreate from "./pages/qualification/QualificationCreate.js";
-import SafetyHealthMng from "./pages/safetyHealthMng/SafetyHealthMng.js";
-import SafetyHealthMngCreate from "./pages/safetyHealthMng/SafetyHealthMngCreate.js";
 import InspectionUpdate from "./pages/inspection/InspectionUpdate.js";
 import InspectionDetail from "./pages/inspection/InspectionDetail.js";
 import SafetyHealthDetail from "./pages/safetyHealth/SafetyHealthDetail.js";
 import SafetyHealthUpdate from "./pages/safetyHealth/SafetyHealthUpdate.js";
 import PartnerUpdate from "./pages/partner/PartnerUpdate.js";
 import PartnerDetail from "./pages/partner/PartnerDetail.js";
+import Organization from "./pages/organization/Organization.js";
+import Education from "./pages/education/Education.js";
+import ShInformation from "./pages/shInformation/ShInformation.js";
+import RegularEducation from "./pages/education/RegularEducation.js";
+import SpecialEducation from "./pages/education/SpecialEducation.js";
+import OtherEducation from "./pages/education/OtherEducation.js";
+import RegularEducationCreate from "./pages/education/RegularEducationCreate.js";
+import SpecialEducationCreate from "./pages/education/SpecialEducationCreate.js";
+import OtherEducationCreate from "./pages/education/OtherEducationCreate.js";
+import ShInformationCreate from "./pages/shInformation/ShInformationCreate.js";
+import ContractorSh from "./pages/shManageBuild/ContractorSh.js";
+import EmergencyPlan from "./pages/shManageBuild/EmergencyPlan.js";
+import HazardManagement from "./pages/shManageBuild/HazardManagement.js";
+import ShLeadership from "./pages/shManageBuild/ShLeadership.js";
+import ShSystemImprove from "./pages/shManageBuild/ShSystemImprove.js";
+import WorkerParticipation from "./pages/shManageBuild/WorkerParticipation.js";
+import ContractorShCreate from "./pages/shManageBuild/ContractorShCreate.js";
+import EmergencyPlanCreate from "./pages/shManageBuild/EmergencyPlanCreate.js";
+import HazardManagementCreate from "./pages/shManageBuild/HazardManagementCreate.js";
+import ShLeadershipCreate from "./pages/shManageBuild/ShLeadershipCreate.js";
+import ShSystemImproveCreate from "./pages/shManageBuild/ShSystemImproveCreate.js";
+import WorkerParticipationCreate from "./pages/shManageBuild/WorkerParticipationCreate.js";
 
 function App() {
   // const routing = useRoutes(Themeroutes);
@@ -131,13 +151,84 @@ function App() {
           path={defaultUrl + "/qualificationCreate"}
           element={<QualificationCreate />}
         />
+
+        <Route path={defaultUrl + "/organization"} element={<Organization />} />
+        <Route path={defaultUrl + "/education"} element={<Education />} />
         <Route
-          path={defaultUrl + "/shManageBuild"}
-          element={<SafetyHealthMng />}
+          path={defaultUrl + "/regularEducation"}
+          element={<RegularEducation />}
         />
         <Route
-          path={defaultUrl + "/shManageBuildCreate"}
-          element={<SafetyHealthMngCreate />}
+          path={defaultUrl + "/specialEducation"}
+          element={<SpecialEducation />}
+        />
+        <Route
+          path={defaultUrl + "/otherEducation"}
+          element={<OtherEducation />}
+        />
+        <Route
+          path={defaultUrl + "/regularEducationCreate"}
+          element={<RegularEducationCreate />}
+        />
+        <Route
+          path={defaultUrl + "/specialEducationCreate"}
+          element={<SpecialEducationCreate />}
+        />
+        <Route
+          path={defaultUrl + "/otherEducationCreate"}
+          element={<OtherEducationCreate />}
+        />
+        <Route
+          path={defaultUrl + "/shInformation"}
+          element={<ShInformation />}
+        />
+        <Route
+          path={defaultUrl + "/shInformationCreate"}
+          element={<ShInformationCreate />}
+        />
+
+        <Route path={defaultUrl + "/contractorSh"} element={<ContractorSh />} />
+        <Route
+          path={defaultUrl + "/emergencyPlan"}
+          element={<EmergencyPlan />}
+        />
+        <Route
+          path={defaultUrl + "/hazardManagement"}
+          element={<HazardManagement />}
+        />
+        <Route path={defaultUrl + "/shLeadership"} element={<ShLeadership />} />
+        <Route
+          path={defaultUrl + "/shSystemImprove"}
+          element={<ShSystemImprove />}
+        />
+        <Route
+          path={defaultUrl + "/workerParticipation"}
+          element={<WorkerParticipation />}
+        />
+
+        <Route
+          path={defaultUrl + "/contractorShCreate"}
+          element={<ContractorShCreate />}
+        />
+        <Route
+          path={defaultUrl + "/emergencyPlanCreate"}
+          element={<EmergencyPlanCreate />}
+        />
+        <Route
+          path={defaultUrl + "/hazardManagementCreate"}
+          element={<HazardManagementCreate />}
+        />
+        <Route
+          path={defaultUrl + "/shLeadershipCreate"}
+          element={<ShLeadershipCreate />}
+        />
+        <Route
+          path={defaultUrl + "/shSystemImproveCreate"}
+          element={<ShSystemImproveCreate />}
+        />
+        <Route
+          path={defaultUrl + "/workerParticipationCreate"}
+          element={<WorkerParticipationCreate />}
         />
 
         <Route path={defaultUrl + "/"} element={<Login />} />
