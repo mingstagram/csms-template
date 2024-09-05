@@ -561,6 +561,9 @@ const ContractorShComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/contractorShUpdate");
+            }}
           >
             수정
           </Button>

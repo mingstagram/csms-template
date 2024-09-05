@@ -465,6 +465,9 @@ const DataResultComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/dataResultUpdate");
+            }}
           >
             수정
           </Button>

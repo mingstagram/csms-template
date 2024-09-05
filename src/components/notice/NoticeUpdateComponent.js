@@ -7,32 +7,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePickerCustom from "../common/DatePickerCustom";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { format } from "date-fns";
 
 const RegistComponent = () => {
   const navigate = useNavigate();
-  const localStorage = window.localStorage;
-  const sessionStorage = window.sessionStorage;
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [selectedMain, setSelectedMain] = useState(null);
   const [selectedRadioGroup, setSelectedRadioGroup] = useState(null);
-  const [customInputValue, setCustomInputValue] = useState("");
-  const storageUsername =
-    localStorage.getItem("username") || sessionStorage.getItem("username");
-
-  const [formData, setFormData] = useState({
-    category: null,
-    calendarDisplay: "N",
-    calendarStartDate: startDate,
-    calendarEndDate: endDate,
-    dateAndTime: null,
-    location: null,
-    title: null,
-    author: storageUsername,
-    content: null,
-  });
 
   const handleMainChange = (value) => {
     setSelectedMain(value);
@@ -42,71 +23,6 @@ const RegistComponent = () => {
 
   const handleRadioGroupChange = (value) => {
     setSelectedRadioGroup(value);
-    if (value === "custom") {
-    } else {
-      setCustomInputValue("");
-      handleInputChange("category", value);
-    }
-  };
-
-  const handleInputChange = (formName, value) => {
-    if (formName === "calendarDisplay") {
-      setStartDate(null);
-      setEndDate(null);
-    }
-    setFormData({
-      ...formData,
-      [formName]: value,
-    });
-  };
-
-  const handleRegist = () => {
-    console.log(formData);
-    if (formData.category === null) {
-      alert("분류를 직접 입력해주세요.");
-      return;
-    }
-    axios
-      .post(`/regist/api/${selectedMain}`, formData)
-      .then((res) => {
-        if (res.data.code === "0000") {
-          console.log(res);
-        }
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
-
-  const handleCustomInputChange = (e) => {
-    setCustomInputValue(e.target.value);
-    setFormData({
-      ...formData,
-      category: e.target.value,
-    });
-  };
-
-  const handleStartDateInputChange = (date) => {
-    const formattedDate = format(date, "yyyy-MM-dd'T'HH:mm:ss");
-    setStartDate(formattedDate);
-    setFormData({
-      ...formData,
-      calendarStartDate: formattedDate,
-    });
-  };
-
-  const handleEndDateInputChange = (date) => {
-    const formattedDate = format(date, "yyyy-MM-dd'T'HH:mm:ss");
-    const today = new Date();
-    if (startDate > formattedDate) {
-      alert("시작날짜 이전을 선택할 수 없습니다.");
-      return;
-    }
-    setEndDate(formattedDate);
-    setFormData({
-      ...formData,
-      calendarEndDate: formattedDate,
-    });
   };
 
   return (
@@ -149,15 +65,9 @@ const RegistComponent = () => {
                     <Input
                       type="radio"
                       name="radioGroup1"
-                      onChange={() => handleMainChange("notice")}
-                    />{" "}
-                    메인 {">"} 공지사항
-                  </span>
-                  <span style={{ flexBasis: "30%" }}>
-                    <Input
-                      type="radio"
-                      name="radioGroup1"
                       onChange={() => handleMainChange("board")}
+                      checked
+                      disabled
                     />{" "}
                     메인 {">"} 게시판
                   </span>
@@ -191,139 +101,65 @@ const RegistComponent = () => {
               }}
             >
               <FormGroup>
-                {/* selectedMain이 null인 경우 텍스트 표시 */}
-                {selectedMain === null && (
-                  <div
-                    style={{
-                      paddingTop: "12px",
-                      color: "#999",
-                      fontSize: "14px",
-                    }}
-                  >
-                    구분을 선택해주세요.
+                <div>
+                  <div className="d-flex" style={{ paddingTop: "12px" }}>
+                    <span style={{ flexBasis: "20%" }}>
+                      <Input
+                        type="radio"
+                        name="radioGroup"
+                        checked={selectedRadioGroup === "request"}
+                        onChange={() => handleRadioGroupChange("request")}
+                      />{" "}
+                      요청
+                    </span>
+                    <span style={{ flexBasis: "20%" }}>
+                      <Input
+                        type="radio"
+                        name="radioGroup"
+                        checked={selectedRadioGroup === "inspection"}
+                        onChange={() => handleRadioGroupChange("inspection")}
+                      />{" "}
+                      점검
+                    </span>
+                    <span style={{ flexBasis: "20%" }}>
+                      <Input
+                        type="radio"
+                        name="radioGroup"
+                        checked={selectedRadioGroup === "committee"}
+                        onChange={() => handleRadioGroupChange("committee")}
+                      />{" "}
+                      협의체
+                    </span>
+                    <span style={{ flexBasis: "20%" }}>
+                      <Input
+                        type="radio"
+                        name="radioGroup"
+                        checked={selectedRadioGroup === "education"}
+                        onChange={() => handleRadioGroupChange("education")}
+                      />{" "}
+                      교육
+                    </span>
+                    <span style={{ flexBasis: "40%", display: "flex" }}>
+                      <Input
+                        type="radio"
+                        name="radioGroup"
+                        checked={selectedRadioGroup === "custom"}
+                        onChange={() => handleRadioGroupChange("custom")}
+                      />{" "}
+                      <Input
+                        type="text"
+                        placeholder="직접입력"
+                        style={{
+                          height: "30px",
+                          width: "180px",
+                          marginLeft: "10px",
+                          fontSize: "12px",
+                          marginTop: "-7px",
+                        }}
+                      />
+                    </span>
                   </div>
-                )}
-                {/* 공지사항이 선택된 경우 */}
-                {selectedMain === "notice" && (
-                  <div>
-                    <div className="d-flex" style={{ paddingTop: "12px" }}>
-                      <span style={{ flexBasis: "20%" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "공모전"}
-                          onChange={() => handleRadioGroupChange("공모전")}
-                        />{" "}
-                        공모전
-                      </span>
-                      <span style={{ flexBasis: "20%" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "지침"}
-                          onChange={() => handleRadioGroupChange("지침")}
-                        />{" "}
-                        지침
-                      </span>
-                      <span style={{ flexBasis: "20%" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "안내"}
-                          onChange={() => handleRadioGroupChange("안내")}
-                        />{" "}
-                        안내
-                      </span>
-                      <span style={{ flexBasis: "40%", display: "flex" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "custom"}
-                          onChange={(e) => handleRadioGroupChange("custom")}
-                        />{" "}
-                        <Input
-                          type="text"
-                          placeholder="직접입력"
-                          value={customInputValue}
-                          onChange={handleCustomInputChange}
-                          disabled={!(selectedRadioGroup === "custom")}
-                          style={{
-                            height: "30px",
-                            width: "180px",
-                            marginLeft: "10px",
-                            fontSize: "12px",
-                            marginTop: "-7px",
-                          }}
-                        />
-                      </span>
-                    </div>
-                  </div>
-                )}
-                {/* 게시판이 선택된 경우 */}
-                {selectedMain === "board" && (
-                  <div>
-                    <div className="d-flex" style={{ paddingTop: "12px" }}>
-                      <span style={{ flexBasis: "20%" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "요청"}
-                          onChange={() => handleRadioGroupChange("요청")}
-                        />{" "}
-                        요청
-                      </span>
-                      <span style={{ flexBasis: "20%" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "점검"}
-                          onChange={() => handleRadioGroupChange("점검")}
-                        />{" "}
-                        점검
-                      </span>
-                      <span style={{ flexBasis: "20%" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "협의체"}
-                          onChange={() => handleRadioGroupChange("협의체")}
-                        />{" "}
-                        협의체
-                      </span>
-                      <span style={{ flexBasis: "20%" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "교육"}
-                          onChange={() => handleRadioGroupChange("교육")}
-                        />{" "}
-                        교육
-                      </span>
-                      <span style={{ flexBasis: "40%", display: "flex" }}>
-                        <Input
-                          type="radio"
-                          name="radioGroup"
-                          checked={selectedRadioGroup === "custom"}
-                          onChange={() => handleRadioGroupChange("custom")}
-                        />{" "}
-                        <Input
-                          type="text"
-                          placeholder="직접입력"
-                          value={customInputValue}
-                          onChange={handleCustomInputChange}
-                          disabled={!(selectedRadioGroup === "custom")}
-                          style={{
-                            height: "30px",
-                            width: "180px",
-                            marginLeft: "10px",
-                            fontSize: "12px",
-                            marginTop: "-7px",
-                          }}
-                        />
-                      </span>
-                    </div>
-                  </div>
-                )}
+                </div>
               </FormGroup>
             </div>
           </div>
@@ -363,15 +199,9 @@ const RegistComponent = () => {
                         fontSize: "12px",
                         marginTop: "-7px",
                       }}
-                      onChange={(e) => {
-                        handleInputChange("calendarDisplay", e.target.value);
-                      }}
                     >
-                      <option key={"N"} value={"N"}>
-                        미표시
-                      </option>
-                      <option key={"Y"} value={"Y"}>
-                        표시
+                      <option key={0} value={0}>
+                        표지선택
                       </option>
                     </Input>
                   </span>
@@ -397,11 +227,10 @@ const RegistComponent = () => {
                       >
                         <DatePicker
                           selected={startDate}
-                          onChange={(date) => handleStartDateInputChange(date)}
+                          onChange={(date) => setStartDate(date)}
                           //   className="form-control custom-date-picker"
                           customInput={<DatePickerCustom />}
                           dateFormat="yyyy/MM/dd" // 원하는 형식으로 변경 가능
-                          disabled={formData.calendarDisplay === "N"}
                         />
                       </div>
                       <div
@@ -415,11 +244,10 @@ const RegistComponent = () => {
                       >
                         <DatePicker
                           selected={endDate}
-                          onChange={(date) => handleEndDateInputChange(date)}
+                          onChange={(date) => setEndDate(date)}
                           //   className="form-control custom-date-picker"
                           customInput={<DatePickerCustom />}
                           dateFormat="yyyy/MM/dd" // 원하는 형식으로 변경 가능
-                          disabled={formData.calendarDisplay === "N"}
                         />
                       </div>
                     </div>
@@ -465,9 +293,6 @@ const RegistComponent = () => {
                         fontSize: "12px",
                         marginTop: "-7px",
                       }}
-                      onChange={(e) => {
-                        handleInputChange("dateAndTime", e.target.value);
-                      }}
                     />
                   </span>
                   <span
@@ -491,9 +316,6 @@ const RegistComponent = () => {
                             fontSize: "12px",
                             marginTop: "-7px",
                             marginLeft: "17px",
-                          }}
-                          onChange={(e) => {
-                            handleInputChange("location", e.target.value);
                           }}
                         />
                       </div>
@@ -539,9 +361,6 @@ const RegistComponent = () => {
                         fontSize: "12px",
                         marginTop: "-7px",
                       }}
-                      onChange={(e) => {
-                        handleInputChange("title", e.target.value);
-                      }}
                     />
                   </span>
                 </div>
@@ -582,9 +401,6 @@ const RegistComponent = () => {
                         width: "575px",
                         fontSize: "12px",
                         marginTop: "-7px",
-                      }}
-                      onChange={(e) => {
-                        handleInputChange("content", e.target.value);
                       }}
                     />
                   </span>
@@ -863,9 +679,8 @@ const RegistComponent = () => {
                   fontSize: "12px",
                   fontFamily: "LGSmart_H",
                 }}
-                onClick={handleRegist}
               >
-                등록
+                수정
               </Button>
             </div>
           </div>

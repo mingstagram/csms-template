@@ -49,7 +49,7 @@ const LeftHeader = () => {
       setActiveSubMenu(path);
     } else {
       switch (path) {
-        case "/dashboard":
+        case "/":
           setActiveMenu(1);
           break;
         case "/announce":
@@ -89,7 +89,7 @@ const LeftHeader = () => {
     } else {
       // Navigate to the URL
       if (menuIndex === 1) {
-        navigate("/dashboard");
+        navigate("/");
       } else if (menuIndex === 2) {
         navigate("/organization");
       } else if (menuIndex === 3) {
@@ -255,7 +255,7 @@ const LeftHeader = () => {
             style={{ borderBottom: "0px", borderTop: "1px solid #ddd" }}
             // onClick={() => handleMenuClick(1)}
             onClick={() => {
-              navigate("/dashboard");
+              navigate("/");
             }}
           >
             <img src={homeIcon} alt="메인 아이콘" className="menu-icon" />

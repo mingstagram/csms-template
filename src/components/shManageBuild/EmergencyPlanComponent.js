@@ -561,6 +561,9 @@ const EmergencyPlanComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/emergencyPlanUpdate");
+            }}
           >
             수정
           </Button>

@@ -375,6 +375,9 @@ const QualificationComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/qualificationUpdate");
+            }}
           >
             수정
           </Button>

@@ -1,12 +1,165 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/projectStyle.css";
 import { Button, Input } from "reactstrap";
 import plusIcon from "../../assets/images/plus-icon.png";
 import plusIconNoBackground from "../../assets/images/plus-icon-nobackground.png";
 import dot3Icon from "../../assets/images/more-2-line.png";
 import closeIcon from "../../assets/images/close-fill.png";
+import {
+  deleteWorkType,
+  getWorkTypes,
+  saveWorkType,
+  updateWorkType,
+  deleteRentalEquipment,
+  getRentalEquipments,
+  saveRentalEquipment,
+  updateRentalEquipment,
+  updateContents,
+  getDisasterTypes,
+} from "../../api/SettingApi";
 
 const SettingComponent = () => {
+  const [contents, setContents] = useState("");
+  const [workType, setWorkType] = useState("");
+  const [workTypes, setWorkTypes] = useState([]);
+  const [rentalEquipment, setRentalEquipment] = useState("");
+  const [rentalEquipments, setRentalEquipments] = useState([]);
+  const [editingWorkType, setEditingWorkType] = useState(null);
+  const [editingRentalEquipment, setEditingRentalEquipment] = useState(null);
+
+  const handleInputChange = (e) => {
+    setContents(e.target.value);
+  };
+
+  const handleWorkTypeChange = (e) => {
+    setWorkType(e.target.value);
+  };
+
+  const handleContents = () => {
+    updateContents(contents)
+      .then((res) => {
+        if (res.data.code === "0000") {
+          alert("문의내용 저장 완료");
+          setContents("");
+        }
+      })
+      .catch(() => {});
+  };
+
+  const handleSaveWorkType = () => {
+    saveWorkType(workType)
+      .then((res) => {
+        if (res.data.code === "0000") {
+          alert("업무 구분 저장 완료");
+          setWorkType({
+            name: "",
+          });
+        }
+      })
+      .catch(() => {});
+  };
+
+  const handleDeleteWorkType = (id) => {
+    deleteWorkType(id)
+      .then((res) => {
+        if (res.data.code === "0000") {
+          alert("업무 구분 삭제 완료");
+        }
+      })
+      .catch(() => {});
+  };
+
+  const loadWorkTypes = () => {
+    getWorkTypes()
+      .then((res) => {
+        if (res.data.code === "0000") {
+          setWorkTypes(res.data.result);
+        }
+      })
+      .catch(() => {});
+  };
+
+  const handleUpdateWorkType = (workType) => {
+    updateWorkType(workType)
+      .then((res) => {
+        if (res.data.code === "0000") {
+          setEditingWorkType(null);
+        }
+      })
+      .catch(() => {});
+  };
+
+  const editFormWorkType = (workType) => {
+    setEditingWorkType(workType);
+  };
+
+  const loadRentalEquipments = () => {
+    getRentalEquipments(rentalEquipment)
+      .then((res) => {
+        if (res.data.code === "0000") {
+          setRentalEquipments(res.data.result);
+        }
+      })
+      .catch(() => {});
+  };
+
+  const handleRentalEquipmentChange = (e) => {
+    setRentalEquipment(e.target.value);
+  };
+
+  const handleSaveRentalEquipment = () => {
+    saveRentalEquipment(rentalEquipment)
+      .then((res) => {
+        if (res.data.code === "0000") {
+          alert("임대설비 관리 저장 완료");
+          setRentalEquipment({
+            name: "",
+          });
+        }
+      })
+      .catch(() => {});
+  };
+
+  const handleDeleteRentalEquipment = (id) => {
+    deleteRentalEquipment(id)
+      .then((res) => {
+        if (res.data.code === "0000") {
+          alert("임대설비 관리 삭제 완료");
+        }
+      })
+      .catch(() => {});
+  };
+
+  const handleUpdateRentalEquipment = (rentalEquipment) => {
+    updateRentalEquipment(rentalEquipment)
+      .then((res) => {
+        if (res.data.code === "0000") {
+          setEditingRentalEquipment(null);
+        }
+      })
+      .catch(() => {});
+  };
+
+  const editFormRentalEquipment = (rentalEquipment) => {
+    setEditingRentalEquipment(rentalEquipment);
+  };
+
+  const loadDisasterTypes = () => {
+    getDisasterTypes()
+      .then((res) => {
+        if (res.data.code === "0000") {
+          setWorkTypes(res.data.result);
+        }
+      })
+      .catch(() => {});
+  };
+
+  useEffect(() => {
+    loadWorkTypes();
+    loadRentalEquipments();
+    loadDisasterTypes();
+  }, [workType, workTypes, rentalEquipment, rentalEquipments]);
+
   return (
     <div style={{ fontFamily: "LGSmart_H" }}>
       <div className="Setting_Component">
@@ -67,6 +220,8 @@ const SettingComponent = () => {
                     fontSize: "12px",
                   }}
                   type="textarea"
+                  onChange={handleInputChange}
+                  value={contents}
                 />
               </div>
             </div>
@@ -95,6 +250,7 @@ const SettingComponent = () => {
                     fontSize: "12px",
                     paddingTop: "8px",
                   }}
+                  onClick={handleContents}
                 >
                   저장
                 </Button>
@@ -112,9 +268,15 @@ const SettingComponent = () => {
                     height: "30px",
                     fontSize: "12px",
                   }}
+                  value={workType.name}
                   placeholder="업무 구분을 입력하세요."
+                  onChange={handleWorkTypeChange}
                 />
-                <img src={plusIcon} style={{ paddingLeft: "5px" }} />
+                <img
+                  src={plusIcon}
+                  style={{ paddingLeft: "5px", cursor: "pointer" }}
+                  onClick={handleSaveWorkType}
+                />
               </div>
               <div style={{ paddingTop: "5px" }}>
                 <div
@@ -135,204 +297,106 @@ const SettingComponent = () => {
                       flexWrap: "wrap",
                     }}
                   >
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>지원</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
+                    {workTypes.map((item, index) => (
+                      <div
+                        className="d-flex"
+                        style={{ padding: "0 70px 10px 30px" }}
                       >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>지원</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
+                        {editingWorkType && editingWorkType.id === item.id ? (
+                          // 수정 모드일 때
+                          <>
+                            <div className="d-flex _Work_stac">
+                              <input
+                                style={{
+                                  width: "100px",
+                                  fontSize: "11px",
+                                }}
+                                type="text"
+                                value={editingWorkType.name}
+                                onChange={(e) => {
+                                  setEditingWorkType({
+                                    ...editingWorkType,
+                                    name: e.target.value,
+                                  });
+                                }}
+                              />
+                            </div>
+                            <span
+                              style={{
+                                fontSize: "11px",
+                                color: "#222",
+                                padding: "5px 0 0 5px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => {
+                                handleUpdateWorkType(editingWorkType);
+                              }}
+                            >
+                              저장
+                            </span>
+                            <span
+                              style={{
+                                fontSize: "11px",
+                                color: "#222",
+                                padding: "5px 0 0 5px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => {
+                                setEditingWorkType(null);
+                              }}
+                            >
+                              취소
+                            </span>
+                          </>
+                        ) : (
+                          // 수정 모드가 아닐 때
+                          <>
+                            <div className="d-flex _Work_stac">
+                              <div
+                                style={{ flexBasis: "10%", marginTop: "-5px" }}
+                              >
+                                <img src={dot3Icon} />{" "}
+                              </div>
+                              <div
+                                style={{
+                                  flexBasis: "80%",
+                                  margin: "-5px 0 0 3px",
+                                  whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
+                                }}
+                              >
+                                <span style={{ fontSize: "11px" }}>
+                                  {item.name}
+                                </span>
+                              </div>
+                              <div
+                                style={{ flexBasis: "10%", marginTop: "-5px" }}
+                              >
+                                <img
+                                  src={closeIcon}
+                                  style={{ cursor: "pointer" }}
+                                  onClick={() => {
+                                    handleDeleteWorkType(item.id);
+                                  }}
+                                />
+                              </div>
+                            </div>
+                            <span
+                              style={{
+                                fontSize: "11px",
+                                color: "#222",
+                                padding: "5px 0 0 5px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => {
+                                editFormWorkType(item);
+                              }}
+                            >
+                              수정
+                            </span>
+                          </>
+                        )}
                       </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>지원</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>지원</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>지원</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>지원</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
+                    ))}
                   </div>
                 </div>
                 <div style={{ flexGrow: 1, marginTop: "-2px" }}>
@@ -354,9 +418,15 @@ const SettingComponent = () => {
                     height: "30px",
                     fontSize: "12px",
                   }}
+                  value={rentalEquipment.name}
+                  onChange={handleRentalEquipmentChange}
                   placeholder="임대설비를 입력하세요."
                 />
-                <img src={plusIcon} style={{ paddingLeft: "5px" }} />
+                <img
+                  src={plusIcon}
+                  style={{ paddingLeft: "5px", cursor: "pointer" }}
+                  onClick={handleSaveRentalEquipment}
+                />
               </div>
               <div style={{ paddingTop: "5px" }}>
                 <div
@@ -377,204 +447,109 @@ const SettingComponent = () => {
                       flexWrap: "wrap",
                     }}
                   >
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>임대설비명</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
+                    {rentalEquipments.map((item, index) => (
+                      <div
+                        className="d-flex"
+                        style={{ padding: "0 70px 10px 30px" }}
                       >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>임대설비명</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
+                        {editingRentalEquipment &&
+                        editingRentalEquipment.id === item.id ? (
+                          // 수정 모드일 때
+                          <>
+                            <div className="d-flex _Work_stac">
+                              <input
+                                style={{
+                                  width: "100px",
+                                  fontSize: "11px",
+                                }}
+                                type="text"
+                                value={editingRentalEquipment.name}
+                                onChange={(e) => {
+                                  setEditingRentalEquipment({
+                                    ...editingRentalEquipment,
+                                    name: e.target.value,
+                                  });
+                                }}
+                              />
+                            </div>
+                            <span
+                              style={{
+                                fontSize: "11px",
+                                color: "#222",
+                                padding: "5px 0 0 5px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => {
+                                handleUpdateRentalEquipment(
+                                  editingRentalEquipment
+                                );
+                              }}
+                            >
+                              저장
+                            </span>
+                            <span
+                              style={{
+                                fontSize: "11px",
+                                color: "#222",
+                                padding: "5px 0 0 5px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => {
+                                setEditingRentalEquipment(null);
+                              }}
+                            >
+                              취소
+                            </span>
+                          </>
+                        ) : (
+                          // 수정 모드가 아닐 때
+                          <>
+                            <div className="d-flex _Work_stac">
+                              <div
+                                style={{ flexBasis: "10%", marginTop: "-5px" }}
+                              >
+                                <img src={dot3Icon} />{" "}
+                              </div>
+                              <div
+                                style={{
+                                  flexBasis: "80%",
+                                  margin: "-5px 0 0 3px",
+                                  whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
+                                }}
+                              >
+                                <span style={{ fontSize: "11px" }}>
+                                  {item.name}
+                                </span>
+                              </div>
+                              <div
+                                style={{ flexBasis: "10%", marginTop: "-5px" }}
+                              >
+                                <img
+                                  src={closeIcon}
+                                  style={{ cursor: "pointer" }}
+                                  onClick={() => {
+                                    handleDeleteRentalEquipment(item.id);
+                                  }}
+                                />
+                              </div>
+                            </div>
+                            <span
+                              style={{
+                                fontSize: "11px",
+                                color: "#222",
+                                padding: "5px 0 0 5px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => {
+                                editFormRentalEquipment(item);
+                              }}
+                            >
+                              수정
+                            </span>
+                          </>
+                        )}
                       </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>임대설비명</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>임대설비명</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>임대설비명</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
-                    {/* 데이터 반복 구간 시작 */}
-                    <div
-                      className="d-flex"
-                      style={{ padding: "0 70px 10px 30px" }}
-                    >
-                      <div className="d-flex _Work_stac">
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={dot3Icon} />{" "}
-                        </div>
-                        <div
-                          style={{
-                            flexBasis: "80%",
-                            margin: "-5px 0 0 3px",
-                            whiteSpace: "nowrap", // 텍스트 줄바꿈 방지
-                          }}
-                        >
-                          <span style={{ fontSize: "11px" }}>임대설비명</span>
-                        </div>
-                        <div style={{ flexBasis: "10%", marginTop: "-5px" }}>
-                          <img src={closeIcon} />
-                        </div>
-                      </div>
-                      <span
-                        style={{
-                          fontSize: "11px",
-                          color: "#222",
-                          padding: "5px 0 0 5px",
-                        }}
-                      >
-                        수정
-                      </span>
-                    </div>
-                    {/* 데이터 반복 구간 종료 */}
+                    ))}
                   </div>
                 </div>
               </div>

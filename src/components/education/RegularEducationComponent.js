@@ -484,6 +484,9 @@ const RegularEducationComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/regularEducationUpdate");
+            }}
           >
             수정
           </Button>

@@ -432,6 +432,9 @@ const ShInformationComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/shInformationUpdate");
+            }}
           >
             수정
           </Button>

@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import Header from "../../layouts/Header";
 import LeftHeader from "../../layouts/LeftHeader";
-import EducationComponent from "../../components/education/EducationComponent";
+import styled from "styled-components";
+import WorkerParticipationUpdateComponent from "../../components/shManageBuild/WorkerParticipationUpdateComponent";
 
-const Education = () => {
+const WorkerParticipationUpdate = () => {
   return (
     <div>
       <Header />
@@ -14,7 +14,7 @@ const Education = () => {
         </Left>
         <Frame>
           <Center>
-            <EducationComponent />
+            <WorkerParticipationUpdateComponent />
           </Center>
         </Frame>
       </div>
@@ -22,7 +22,7 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default WorkerParticipationUpdate;
 
 const Frame = styled.div`
   display: flex;

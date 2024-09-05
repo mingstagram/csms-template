@@ -561,6 +561,9 @@ const ShSystemImproveComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/shSystemImproveUpdate");
+            }}
           >
             수정
           </Button>

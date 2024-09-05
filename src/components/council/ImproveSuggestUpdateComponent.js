@@ -1,144 +1,26 @@
 import React from "react";
 import "../../styles/projectStyle.css";
 import plusIconNoBackground from "../../assets/images/plus-icon-nobackground.png";
+import closeFill from "../../assets/images/systems-close-fill.png";
+import attachFile from "../../assets/images/attach_file.png";
 import closeIcon from "../../assets/images/close-fill.png";
+import component211 from "../../assets/images/component-211.png";
 import { Button, FormGroup, Input, Row } from "reactstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePickerCustom from "../common/DatePickerCustom";
 import { useNavigate } from "react-router-dom";
 
-const ShSystemImproveCreateComponent = () => {
+const ImproveSuggestUpdateComponent = () => {
   const navigate = useNavigate();
   return (
     <div style={{ fontFamily: "LGSmart_H" }}>
       <div className="Write_Component">
         <div className="d-flex">
           <div className="Rectangle-346"></div>
-          <p className="main-sub-title">안전보건관리체계 구축</p>
+          <p className="main-sub-title">협의체</p>
         </div>
         <div className="Write_Component1">
-          <div className="d-flex" style={{ paddingTop: "10px" }}>
-            <Button
-              style={{
-                width: "160px",
-                height: "34px",
-                borderRadius: "500px",
-                paddingTop: "4px",
-                border: "solid 1px #d9d9d9",
-                backgroundColor: "white",
-                marginRight: "10px",
-              }}
-              onClick={() => {
-                navigate("/shLeadershipCreate");
-              }}
-            >
-              <span
-                style={{ fontSize: "12px", fontWeight: "bold", color: "#666" }}
-              >
-                경영자의 안전보건 리더십
-              </span>
-            </Button>
-            <Button
-              style={{
-                width: "160px",
-                height: "34px",
-                borderRadius: "500px",
-                paddingTop: "4px",
-                border: "solid 1px #d9d9d9",
-                backgroundColor: "white",
-                marginRight: "10px",
-              }}
-              onClick={() => {
-                navigate("/workerParticipationCreate");
-              }}
-            >
-              <span
-                style={{ fontSize: "14px", fontWeight: "bold", color: "#666" }}
-              >
-                근로자의 참여
-              </span>
-            </Button>
-            <Button
-              style={{
-                width: "160px",
-                height: "34px",
-                borderRadius: "500px",
-                paddingTop: "4px",
-                border: "solid 1px #d9d9d9",
-                backgroundColor: "white",
-                marginRight: "10px",
-              }}
-              onClick={() => {
-                navigate("/hazardManagementCreate");
-              }}
-            >
-              <span
-                style={{ fontSize: "12px", fontWeight: "bold", color: "#666" }}
-              >
-                위험요인 제거·대체 및 통제
-              </span>
-            </Button>
-            <Button
-              style={{
-                width: "160px",
-                height: "34px",
-                borderRadius: "500px",
-                paddingTop: "4px",
-                border: "solid 1px #d9d9d9",
-                backgroundColor: "white",
-                marginRight: "10px",
-              }}
-              onClick={() => {
-                navigate("/emergencyPlanCreate");
-              }}
-            >
-              <span
-                style={{ fontSize: "14px", fontWeight: "bold", color: "#666" }}
-              >
-                비상조치계획
-              </span>
-            </Button>
-          </div>
-          <div className="d-flex" style={{ paddingTop: "10px" }}>
-            <Button
-              style={{
-                width: "160px",
-                height: "34px",
-                borderRadius: "500px",
-                paddingTop: "4px",
-                border: "solid 1px #d9d9d9",
-                backgroundColor: "white",
-                marginRight: "10px",
-              }}
-              onClick={() => {
-                navigate("/contractorShCreate");
-              }}
-            >
-              <span
-                style={{ fontSize: "10px", fontWeight: "bold", color: "#666" }}
-              >
-                도급·용역·위탁시 안전보건 확보
-              </span>
-            </Button>
-            <Button
-              style={{
-                width: "160px",
-                height: "34px",
-                borderRadius: "500px",
-                backgroundColor: "#29282d",
-                paddingTop: "4px",
-                marginRight: "10px",
-              }}
-              onClick={() => {
-                navigate("/shSystemImproveCreate");
-              }}
-            >
-              <span style={{ fontSize: "10px", fontWeight: "bold" }}>
-                안전보건관리체계 평가 및 개선
-              </span>
-            </Button>
-          </div>
           <div
             className="d-flex"
             style={{
@@ -174,9 +56,9 @@ const ShSystemImproveCreateComponent = () => {
                     marginTop: "10px",
                   }}
                 >
-                  <span style={{ flexBasis: "50%" }}>
+                  <span style={{ flexBasis: "40%" }}>
                     <Input type="radio" name="radioGroup1" checked disabled />
-                    &nbsp;중대재해처벌법 {">"} 안전보건관리체계 평가 및 개선
+                    &nbsp;산업안전보건법 {">"} 개선제안 · 아차사고
                   </span>
                 </div>
               </FormGroup>
@@ -254,6 +136,7 @@ const ShSystemImproveCreateComponent = () => {
                         fontSize: "12px",
                         marginTop: "-7px",
                       }}
+                      value={"평택 LG전자 화면 설계서 가이드 입니다."}
                     />
                   </span>
                 </div>
@@ -263,13 +146,13 @@ const ShSystemImproveCreateComponent = () => {
           <div
             className="d-flex"
             style={{
-              height: "160px",
+              height: "100px",
             }}
           >
             <div
               style={{
                 flexBasis: "20%",
-                padding: "50px 10px",
+                padding: "30px 10px",
                 fontSize: "12px",
                 fontWeight: "bold",
               }}
@@ -290,11 +173,12 @@ const ShSystemImproveCreateComponent = () => {
                       type="textarea"
                       placeholder="내용을 입력하거나 이미지를 붙여넣기 하세요."
                       style={{
-                        height: "150px",
+                        height: "90px",
                         width: "575px",
                         fontSize: "12px",
                         marginTop: "-7px",
                       }}
+                      value={"게시물 내용"}
                     />
                   </span>
                 </div>
@@ -348,6 +232,86 @@ const ShSystemImproveCreateComponent = () => {
               </FormGroup>
             </div>
           </div>
+          <div className="d-flex">
+            <div
+              style={{
+                flexBasis: "20%",
+                padding: "0px 10px",
+                fontSize: "12px",
+                fontWeight: "bold",
+              }}
+            >
+              <span>&#183;</span>
+            </div>
+            <div
+              style={{
+                flexBasis: "80%",
+                paddingLeft: "10px",
+                fontSize: "12px",
+              }}
+            >
+              <div class="_Work_stac3">
+                <div className="d-flex">
+                  <div style={{ flexBasis: "4%" }}>
+                    <img src={attachFile} />
+                  </div>
+                  <div style={{ flexBasis: "92%" }}>
+                    <span
+                      style={{
+                        fontSize: "11px",
+                        paddingLeft: "5px",
+                      }}
+                    >
+                      1234.jpg (26KB)
+                    </span>
+                  </div>
+                  <div style={{ flexBasis: "4%" }}>
+                    <img src={closeFill} />
+                  </div>
+                </div>
+              </div>
+              <div class="_Work_stac3">
+                <div className="d-flex">
+                  <div style={{ flexBasis: "4%" }}>
+                    <img src={attachFile} />
+                  </div>
+                  <div style={{ flexBasis: "92%" }}>
+                    <span
+                      style={{
+                        fontSize: "11px",
+                        paddingLeft: "5px",
+                      }}
+                    >
+                      1234.jpg (26KB)
+                    </span>
+                  </div>
+                  <div style={{ flexBasis: "4%" }}>
+                    <img src={closeFill} />
+                  </div>
+                </div>
+              </div>
+              <div class="_Work_stac3">
+                <div className="d-flex">
+                  <div style={{ flexBasis: "4%" }}>
+                    <img src={attachFile} />
+                  </div>
+                  <div style={{ flexBasis: "92%" }}>
+                    <span
+                      style={{
+                        fontSize: "11px",
+                        paddingLeft: "5px",
+                      }}
+                    >
+                      1234.jpg (26KB)
+                    </span>
+                  </div>
+                  <div style={{ flexBasis: "4%" }}>
+                    <img src={closeFill} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div
             className="d-flex"
@@ -378,8 +342,11 @@ const ShSystemImproveCreateComponent = () => {
                   fontSize: "12px",
                   fontFamily: "LGSmart_H",
                 }}
+                onClick={() => {
+                  navigate(-1);
+                }}
               >
-                수정
+                이전
               </Button>
             </div>
             <div
@@ -414,4 +381,4 @@ const ShSystemImproveCreateComponent = () => {
   );
 };
 
-export default ShSystemImproveCreateComponent;
+export default ImproveSuggestUpdateComponent;

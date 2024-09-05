@@ -4,8 +4,10 @@ import component179 from "../../assets/images/Component-179.png";
 import component180 from "../../assets/images/Component-180.png";
 import { Button, Input } from "reactstrap";
 import CommentItem from "../common/CommentItem";
+import { useNavigate } from "react-router-dom";
 
 const AnnounceComponent = () => {
+  const navigate = useNavigate();
   const rows = Array.from({ length: 15 });
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -346,6 +348,9 @@ const AnnounceComponent = () => {
               color: "black",
               fontSize: "12px",
               marginRight: "5px",
+            }}
+            onClick={() => {
+              navigate("/announceUpdate");
             }}
           >
             수정

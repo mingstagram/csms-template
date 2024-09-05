@@ -174,9 +174,9 @@ const ShLeadershipCreateComponent = () => {
                     marginTop: "10px",
                   }}
                 >
-                  <span style={{ flexBasis: "40%" }}>
+                  <span style={{ flexBasis: "50%" }}>
                     <Input type="radio" name="radioGroup1" checked />
-                    &nbsp;중대재해처벌법 {">"} 안전보건관리체계 구축
+                    &nbsp;중대재해처벌법 {">"} 경영자의 안전보건 리더십
                   </span>
                 </div>
               </FormGroup>

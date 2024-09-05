@@ -485,6 +485,9 @@ const SpecialEducationComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/specialEducationUpdate");
+            }}
           >
             수정
           </Button>

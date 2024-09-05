@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 
 const Main = () => {
   const rows1 = Array.from({ length: 5 });
+  const rows2 = Array.from({ length: 10 });
   const [date, setDate] = useState(new Date());
   const [yearList, setYearList] = useState([]);
   const [monthList, setMonthList] = useState([]);
@@ -57,9 +58,10 @@ const Main = () => {
 
   const getNoticeList = () => {
     axios
-      .post("/main/api/notice_top5")
+      .get("/main/api/notice_top5")
       .then((res) => {
         if (res.data.code === "0000") {
+          console.log(res.data.result);
           setNoticeList(res.data.result);
         }
       })
@@ -68,9 +70,10 @@ const Main = () => {
 
   const getBoardList = () => {
     axios
-      .post("/main/api/board_top5")
+      .get("/main/api/board_top5")
       .then((res) => {
         if (res.data.code === "0000") {
+          console.log(res.data.result);
           setBoardList(res.data.result);
         }
       })
@@ -79,9 +82,10 @@ const Main = () => {
 
   const getCouncilList = () => {
     axios
-      .post("/main/api/council_top5")
+      .get("/main/api/council_top5")
       .then((res) => {
         if (res.data.code === "0000") {
+          console.log(res.data.result);
           setCouncilList(res.data.result);
         }
       })
@@ -90,9 +94,10 @@ const Main = () => {
 
   const getImproveList = () => {
     axios
-      .post("/main/api/improve_top5")
+      .get("/main/api/improve_top5")
       .then((res) => {
         if (res.data.code === "0000") {
+          console.log(res.data.result);
           setImproveList(res.data.result);
         }
       })
@@ -380,50 +385,110 @@ const Main = () => {
                     borderCollapse: "collapse",
                   }}
                 >
-                  <tbody>
-                    <tr>
+                  <thead>
+                    <tr
+                      style={{
+                        height: "25px",
+                        fontSize: "12px", // 필요에 따라 글꼴 크기 조정
+                      }}
+                    >
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "20%" }}
+                        style={{
+                          width: "20%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         분류
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "50%" }}
+                        style={{
+                          width: "44%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         제목
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "15%" }}
+                        style={{
+                          width: "18%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         등록일
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "15%" }}
+                        style={{
+                          width: "18%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         수정일
                       </th>
                     </tr>
-                    {rows1.map((_, index) => (
-                      <tr key={index} className="table-row">
-                        <td className="main-table main-table-row1">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
+                  </thead>
+                  <tbody>
+                    {noticeList.map((item, index) => (
+                      <tr
+                        key={index}
+                        className="table-row"
+                        style={{
+                          height: "25px",
+                          fontSize: "12px", // 필요에 따라 글꼴 크기 조정
+                        }}
+                      >
+                        <td
+                          className="main-table main-table-row1"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.category}
+                        </td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          <div
+                            className="d-flex"
+                            style={{ height: "100%", alignItems: "center" }}
+                          >
+                            <div
+                              className="Ellipse-368"
+                              style={{ display: "inline-block" }}
+                            >
                               <span className="N">N</span>
                             </div>
                             <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                              style={{
+                                fontSize: "12px",
+                                marginLeft: "7px",
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
                             >
-                              asdf
+                              {item.title}
                             </span>
                           </div>
                         </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.createdAt}
+                        </td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.updatedAt}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -469,50 +534,108 @@ const Main = () => {
                     borderCollapse: "collapse",
                   }}
                 >
-                  <tbody>
-                    <tr>
+                  <thead>
+                    <tr
+                      style={{
+                        height: "25px", // 헤더 행의 높이 설정
+                      }}
+                    >
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "20%" }}
+                        style={{
+                          width: "20%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         업체명
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "50%" }}
+                        style={{
+                          width: "44%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         제목
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "15%" }}
+                        style={{
+                          width: "18%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         등록일
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "15%" }}
+                        style={{
+                          width: "18%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         수정일
                       </th>
                     </tr>
-                    {rows1.map((_, index) => (
-                      <tr key={index} className="table-row">
-                        <td className="main-table">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
+                  </thead>
+                  <tbody>
+                    {councilList.map((item, index) => (
+                      <tr
+                        key={index}
+                        className="table-row"
+                        style={{
+                          height: "25px", // 각 행의 높이 설정
+                        }}
+                      >
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.author}
+                        </td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          <div
+                            className="d-flex"
+                            style={{ height: "100%", alignItems: "center" }}
+                          >
+                            <div
+                              className="Ellipse-368"
+                              style={{ display: "inline-block" }}
+                            >
                               <span className="N">N</span>
                             </div>
                             <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                              style={{
+                                fontSize: "12px",
+                                marginLeft: "7px",
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
                             >
-                              asdf
+                              {item.title}
                             </span>
                           </div>
                         </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.createdAt}
+                        </td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.updatedAt}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -562,50 +685,110 @@ const Main = () => {
                     borderCollapse: "collapse",
                   }}
                 >
-                  <tbody>
-                    <tr>
+                  <thead>
+                    <tr
+                      style={{
+                        height: "25px",
+                        fontSize: "12px", // 필요에 따라 글꼴 크기 조정
+                      }}
+                    >
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "20%" }}
+                        style={{
+                          width: "20%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         분류
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "50%" }}
+                        style={{
+                          width: "44%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         제목
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "15%" }}
+                        style={{
+                          width: "18%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         등록일
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "15%" }}
+                        style={{
+                          width: "18%",
+                          height: "25px",
+                          overflow: "hidden",
+                        }}
                       >
                         수정일
                       </th>
                     </tr>
-                    {rows1.map((_, index) => (
-                      <tr key={index} className="table-row">
-                        <td className="main-table main-table-row1">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
+                  </thead>
+                  <tbody>
+                    {boardList.map((item, index) => (
+                      <tr
+                        key={index}
+                        className="table-row"
+                        style={{
+                          height: "25px",
+                          fontSize: "12px", // 필요에 따라 글꼴 크기 조정
+                        }}
+                      >
+                        <td
+                          className="main-table main-table-row1"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.category}
+                        </td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          <div
+                            className="d-flex"
+                            style={{ height: "100%", alignItems: "center" }}
+                          >
+                            <div
+                              className="Ellipse-368"
+                              style={{ display: "inline-block" }}
+                            >
                               <span className="N">N</span>
                             </div>
                             <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                              style={{
+                                fontSize: "12px",
+                                marginLeft: "7px",
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
                             >
-                              asdf
+                              {item.title}
                             </span>
                           </div>
                         </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.createdAt}
+                        </td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.updatedAt}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -645,55 +828,99 @@ const Main = () => {
               >
                 <table
                   style={{
-                    width: "100%",
-                    height: "100%",
+                    width: "530px",
+                    height: "150px",
                     borderCollapse: "collapse",
                   }}
                 >
-                  <tbody>
-                    <tr>
+                  <thead>
+                    <tr
+                      style={{
+                        height: "25px",
+                        fontSize: "12px", // 필요에 따라 글꼴 크기 조정
+                      }}
+                    >
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "20%" }}
+                        style={{ width: "20%", height: "25px" }}
                       >
                         업체명
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "50%" }}
+                        style={{ width: "44%", height: "25px" }}
                       >
                         제목
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "15%" }}
+                        style={{ width: "18%", height: "25px" }}
                       >
                         등록일
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "15%" }}
+                        style={{ width: "18%", height: "25px" }}
                       >
                         수정일
                       </th>
                     </tr>
-                    {rows1.map((_, index) => (
-                      <tr key={index} className="table-row">
-                        <td className="main-table">asdf</td>
-                        <td className="main-table">
-                          <div className="d-flex">
-                            <div className="Ellipse-368">
+                  </thead>
+                  <tbody>
+                    {improveList.map((item, index) => (
+                      <tr
+                        style={{
+                          height: "25px",
+                          fontSize: "12px", // 필요에 따라 글꼴 크기 조정
+                        }}
+                        key={index}
+                        className="table-row"
+                      >
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.author}
+                        </td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          <div
+                            className="d-flex"
+                            style={{ height: "100%", alignItems: "center" }}
+                          >
+                            <div
+                              className="Ellipse-368"
+                              style={{ display: "inline-block" }}
+                            >
                               <span className="N">N</span>
                             </div>
                             <span
-                              style={{ fontSize: "12px", marginLeft: "7px" }}
+                              style={{
+                                fontSize: "12px",
+                                marginLeft: "7px",
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
                             >
-                              asdf
+                              {item.title}
                             </span>
                           </div>
                         </td>
-                        <td className="main-table">asd</td>
-                        <td className="main-table">asd</td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.createdAt}
+                        </td>
+                        <td
+                          className="main-table"
+                          style={{ height: "25px", overflow: "hidden" }}
+                        >
+                          {item.updatedAt}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -767,7 +994,7 @@ const Main = () => {
                   formatDay={(locale, date) => date.getDate()} // 요일 텍스트 설정
                 />
               </div>
-              <div
+              {/* <div
                 className="d-flex justify-content-between align-items-center"
                 style={{ paddingTop: "20px" }}
               >
@@ -787,33 +1014,33 @@ const Main = () => {
                 >
                   더보기
                 </span>
-              </div>
+              </div> */}
               <div
                 style={{
                   width: "530px",
-                  height: "150px",
-                  marginTop: "10px",
-                  overflow: "hidden",
+                  height: "180px",
+                  marginTop: "25px",
+                  overflowY: "auto", // 세로 스크롤 활성화
+                  overflowX: "hidden", // 가로 스크롤 비활성화
                 }}
               >
                 <table
                   style={{
                     width: "100%",
-                    height: "100%",
                     borderCollapse: "collapse",
                   }}
                 >
                   <tbody>
-                    <tr>
+                    <tr style={{ height: "30px" }}>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "00%" }}
+                        style={{ width: "20%" }}
                       >
                         분류
                       </th>
                       <th
                         className="main-table main-table-title"
-                        style={{ width: "40%" }}
+                        style={{ width: "35%" }}
                       >
                         제목
                       </th>
@@ -842,8 +1069,8 @@ const Main = () => {
                         장소
                       </th>
                     </tr>
-                    {rows1.map((_, index) => (
-                      <tr>
+                    {rows2.map((_, index) => (
+                      <tr key={index} style={{ height: "30px" }}>
                         <td className="main-table">asdf</td>
                         <td className="main-table">
                           <div className="d-flex">

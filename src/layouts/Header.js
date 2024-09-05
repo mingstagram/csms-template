@@ -30,6 +30,7 @@ import axios from "axios";
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const [company, setCompany] = useState([]);
+  const localStorage = window.localStorage;
   const sessionStorage = window.sessionStorage;
   const username = sessionStorage.getItem("username");
   const department = sessionStorage.getItem("department");
@@ -45,8 +46,9 @@ const Header = () => {
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   const HandleLogout = () => {
-    sessionStorage.removeItem("username");
-    navigate("/");
+    localStorage.clear();
+    sessionStorage.clear();
+    navigate("/login");
   };
 
   const HandlePasswordChangePage = () => {
@@ -62,6 +64,19 @@ const Header = () => {
     }
     return width;
   };
+
+  useEffect(() => {
+    // localStorage와 sessionStorage에서 토큰을 가져옴
+    // const accessToken =
+    //   localStorage.getItem("accessToken") ||
+    //   sessionStorage.getItem("accessToken");
+    // const refreshToken =
+    //   localStorage.getItem("refreshToken") ||
+    //   sessionStorage.getItem("refreshToken");
+    // if (!accessToken && !refreshToken) {
+    //   navigate("/login");
+    // }
+  }, []);
 
   return (
     <Navbar
@@ -113,7 +128,7 @@ const Header = () => {
             <span
               className="LG-Dash-Board1"
               onClick={() => {
-                navigate("/dashboard");
+                navigate("/");
                 window.location.reload();
               }}
             >

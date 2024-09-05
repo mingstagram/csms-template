@@ -561,6 +561,9 @@ const ShLeadershipComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/workerParticipationUpdate");
+            }}
           >
             수정
           </Button>

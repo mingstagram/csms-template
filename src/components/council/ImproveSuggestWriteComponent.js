@@ -94,11 +94,7 @@ const ImproveSuggestWriteComponent = () => {
                   }}
                 >
                   <span style={{ flexBasis: "40%" }}>
-                    <Input type="radio" name="radioGroup1" />
-                    &nbsp;산업안전보건법 {">"} 협의체 자료 · 결과
-                  </span>
-                  <span style={{ flexBasis: "40%" }}>
-                    <Input type="radio" name="radioGroup1" />
+                    <Input type="radio" name="radioGroup1" checked disabled />
                     &nbsp;산업안전보건법 {">"} 개선제안 · 아차사고
                   </span>
                 </div>
@@ -133,7 +129,8 @@ const ImproveSuggestWriteComponent = () => {
               <FormGroup>
                 <div className="d-flex">
                   <span style={{ flexBasis: "20%" }}>
-                    <Input type="radio" name="radioGroup" /> 해당사항 없음
+                    <Input type="radio" name="radioGroup" checked /> 해당사항
+                    없음
                   </span>
                 </div>
               </FormGroup>
@@ -300,8 +297,11 @@ const ImproveSuggestWriteComponent = () => {
                   fontSize: "12px",
                   fontFamily: "LGSmart_H",
                 }}
+                onClick={() => {
+                  navigate(-1);
+                }}
               >
-                수정
+                이전
               </Button>
             </div>
             <div

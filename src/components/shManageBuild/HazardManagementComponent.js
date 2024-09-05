@@ -561,6 +561,9 @@ const HazardManagementComponent = () => {
               fontSize: "12px",
               marginRight: "5px",
             }}
+            onClick={() => {
+              navigate("/hazardManagementUpdate");
+            }}
           >
             수정
           </Button>
